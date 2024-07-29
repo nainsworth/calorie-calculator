@@ -1,26 +1,25 @@
 import { heightConversion, weightConversion } from "./utils";
 
 // Harris-Benedict Equation
-const hbEquation = (sex, weight, feet, inches, age) => {
-  const bmr = 0;
-  if (sex === "Male") {
-    return (
-      88.362 +
-      13.397 * weightConversion(weight) +
-      4.799 * heightConversion(feet, inches) -
-      5.677 * age
-    );
-  } else {
-    return (
-      447.593 +
-      9.247 * weightConversion(weight) +
-      3.098 * heightConversion(feet, inches) -
-      4.33 * age
-    );
-  }
+// const hbEquation = (sex, weight, feet, inches, age) => {
+//   const bmr = 0;
+//   if (sex === "Male") {
+//     return (
+//       88.362 +
+//       13.397 * weightConversion(weight) +
+//       4.799 * heightConversion(feet, inches) -
+//       5.677 * age
+//     );
+//   } else {
+//     return (
+//       447.593 +
+//       9.247 * weightConversion(weight) +
+//       3.098 * heightConversion(feet, inches) -
+//       4.33 * age
+//     );
+//   }
 
-  return bmr;
-};
+// };
 
 // Mifflin-St.Jeor Equation
 const msjEquation = (sex, weight, feet, inches, age) => {
@@ -49,4 +48,4 @@ const kmEquation = (weight, bodyFat) => {
   return 370 + (21.6 + leanMass);
 };
 
-export { hbEquation, msjEquation, kmEquation };
+export { msjEquation, kmEquation };
