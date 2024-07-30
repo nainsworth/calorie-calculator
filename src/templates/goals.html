@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Goals</title>
+  </head>
+  <body>
+    <main>
+      <form action="" method="get" id="goal-form">
+        <h2>Your Goals</h2>
+        <!-- Goal -->
+        <div class="input-goal">
+          <label for="goal">I would like to:</label>
+          <select name="goal" id="goal">
+            <option value="lose" selected>Lose Weight</option>
+            <option value="maintain">Maintain Weight</option>
+            <option value="gain">Gain Weight</option>
+          </select>
+        </div>
+        <!-- Target Weight -->
+        <div class="input-target">
+          <label for="weight-goal">What is your target weight?</label>
+          <input type="number" name="weight-goal" id="weight-goal" />
+          <span class="input-span">lbs</span>
+        </div>
+        <!-- Rate -->
+        <div class="input-rate">
+          <label for="rate">What is your target goal rate?</label>
+          <input type="range" name="rate" id="rate" />
+        </div>
+
+        <!-- Preferred Diet -->
+        <div class="preferred-diet">
+          <label for="preferred-diet">What is your preferred diet?</label>
+          <select name="preferred-diet" id="preferred-diet">
+            <option value="low-fat">Low Fat/High Carb</option>
+            <option value="balanced" selected>Balanced</option>
+            <option value="low-carb">Low-Carb/High Fat</option>
+          </select>
+        </div>
+
+        <!-- Preferred Protein -->
+        <div class="preferred-protein">
+          <label for="preferred-protein">What is your preferred diet?</label>
+          <select name="preferred-protein" id="preferred-protein">
+            <option value="low">Low</option>
+            <option value="moderate" selected>Moderate</option>
+            <option value="high">High</option>
+            <option value="extra-high">Extra High</option>
+          </select>
+        </div>
+        <input type="submit" value="Calculate" />
+      </form>
+    </main>
+    <footer><%= require('html-loader!./partials/footer.html').default%></footer>
+  </body>
+</html>
