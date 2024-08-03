@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack serve"
+    "dev": "webpack serve",
+    "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "repository": {
     "type": "git",
-    "url": "calorie-calculator",
-    "deploy": "git subtree push --prefix dist origin gh-pages"
+    "url": "calorie-calculator"
   },
   "keywords": [],
   "author": "Nicholas Ainsworth",
