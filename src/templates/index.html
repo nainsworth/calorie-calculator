@@ -14,21 +14,7 @@
   <body>
     <main>
       <div class="card">
-        <div class="unit-input" hidden>
-          <label for="radio-units">Unit:</label>
-          <input
-            type="radio"
-            name="radio-units"
-            id="imperial"
-            value="Imperial"
-            checked="checked"
-          />
-          <label for="radio-units">Imperial (lbs/in)</label>
-          <input type="radio" name="radio-units" id="metric" value="Metric" />
-          <label for="radio-units">Metric (kg/cm)</label>
-        </div>
         <h2>About You</h2>
-
         <%= require('html-loader!./partials/imperial-form.html').default%>
       </div>
     </main>
