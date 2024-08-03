@@ -76,14 +76,14 @@ body main .card {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin: 32px;
+  margin: 16px;
 }
-body main .card #imperial-form {
+body main .card form {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 12px;
 }
-body main .card #imperial-form div {
+body main .card form div {
   border: 1px solid var(--black);
   display: flex;
   justify-content: space-between;
@@ -91,62 +91,63 @@ body main .card #imperial-form div {
   padding: 12px;
   gap: 8px;
 }
-body main .card #imperial-form input {
+body main .card form input {
   border: none;
 }
-body main .card #imperial-form input:focus,
-body main .card #imperial-form input:active {
+body main .card form input:focus,
+body main .card form input:active {
   outline: none;
 }
-body main .card #imperial-form .info-container {
+body main .card form .info-container {
   border: none;
   padding: 0;
   align-items: center;
 }
-body main .card #imperial-form .info-container input {
+body main .card form .info-container input {
   width: 32px;
   text-align: end;
 }
-body main .card #imperial-form select {
+body main .card form select {
   border: none;
   font-size: var(--font-size);
+  text-align: end;
 }
-body main .card #imperial-form input {
+body main .card form input {
   accent-color: var(--primary-color);
   font-size: var(--font-size);
 }
-body main .card #imperial-form input::-webkit-outer-spin-button,
-body main .card #imperial-form input::-webkit-inner-spin-button {
+body main .card form input::-webkit-outer-spin-button,
+body main .card form input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-body main .card #imperial-form .input-name {
+body main .card form .input-name {
   grid-column: -1/1;
   gap: 8px;
 }
-body main .card #imperial-form .input-name input {
+body main .card form .input-name input {
   width: 100%;
 }
-body main .card #imperial-form .input-email {
+body main .card form .input-email {
   grid-column: -1/1;
   gap: 8px;
 }
-body main .card #imperial-form .input-email input {
+body main .card form .input-email input {
   width: 100%;
 }
-body main .card #imperial-form .input-height .info-container input {
+body main .card form .input-height .info-container input {
   width: 24px;
 }
-body main .card #imperial-form .input-activity {
+body main .card form .input-activity {
   grid-column: -1/1;
   flex-direction: column;
 }
-body main .card #imperial-form .input-activity .activity-container {
+body main .card form .input-activity .activity-container {
   flex-direction: column;
   border: none;
   padding: 0 16px;
 }
-body main .card #imperial-form .input-activity .activity-container .radio-activity {
+body main .card form .input-activity .activity-container .radio-activity {
   border-width: 0 0 1px 0;
   border-radius: 0;
   border-color: var(--secondary-color);
@@ -155,16 +156,16 @@ body main .card #imperial-form .input-activity .activity-container .radio-activi
   gap: 16px;
   align-items: center;
 }
-body main .card #imperial-form .input-activity .activity-container .radio-activity input {
+body main .card form .input-activity .activity-container .radio-activity input {
   width: 20px;
 }
-body main .card #imperial-form .input-activity .activity-container .radio-activity input:hover {
+body main .card form .input-activity .activity-container .radio-activity input:hover {
   cursor: pointer;
 }
-body main .card #imperial-form .input-activity .activity-container .radio-activity:last-of-type {
+body main .card form .input-activity .activity-container .radio-activity:last-of-type {
   border: none;
 }
-body main .card #imperial-form input[type=submit] {
+body main .card form input[type=submit] {
   grid-column: -1/1;
   border-radius: 8px;
   margin-top: 16px;
@@ -174,10 +175,13 @@ body main .card #imperial-form input[type=submit] {
   color: var(--white);
   border: 1ps solid var(--primary-color);
 }
-body main .card #imperial-form input[type=submit]:hover,
-body main .card #imperial-form input[type=submit]:active {
+body main .card form input[type=submit]:hover,
+body main .card form input[type=submit]:active {
   cursor: pointer;
   background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
+}
+body main .card #goal-form div {
+  grid-column: -1/1;
 }
 
 footer {
@@ -197,7 +201,7 @@ footer .footer-link {
 }
 footer .footer-link .github-image {
   width: 24px;
-}`, "",{"version":3,"sources":["webpack://./src/assets/styles/main.scss"],"names":[],"mappings":"AAEA,mBAAA;AACA;EACE,mBAAA;EACA,wBAAA;EACA,0BAAA;EACA,2BAAA;EACA,aAAA;EACA,aAAA;EAEA,eAAA;EACA,wBAAA;EACA,mBAAA;EACA,gBAAA;EACA,uCAAA;AADF;;AAIA,kBAAA;AACA;;;EAGE,SAAA;EACA,UAAA;EACA,sBAAA;EACA,gCAAA;AADF;;AAIA,oBAAA;AACA;EACE,YAAA;EACA,WAAA;AADF;;AAIA;EACE,yCAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,iBAAA;EACA,2BAAA;AADF;AAGE;EACE,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,OAAA;AADJ;AAGI;EACE,8BAAA;EACA,kBAAA;EACA,aAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,SAAA;EACA,YAAA;AADN;AAGM;EACE,aAAA;EACA,4DAAA;EACA,SAAA;AADR;AAGQ;EACE,8BAAA;EACA,aAAA;EACA,8BAAA;EACA,kBAAA;EACA,aAAA;EACA,QAAA;AADV;AAIQ;EACE,YAAA;AAFV;AAKQ;;EAEE,aAAA;AAHV;AAMQ;EACE,YAAA;EACA,UAAA;EACA,mBAAA;AAJV;AAMU;EACE,WAAA;EACA,eAAA;AAJZ;AAQQ;EACE,YAAA;EACA,2BAAA;AANV;AASQ;EACE,kCAAA;EACA,2BAAA;AAPV;AAWQ;;EAEE,wBAAA;EACA,SAAA;AATV;AAYQ;EACE,iBAAA;EACA,QAAA;AAVV;AAYU;EACE,WAAA;AAVZ;AAaQ;EACE,iBAAA;EACA,QAAA;AAXV;AAaU;EACE,WAAA;AAXZ;AAiBY;EACE,WAAA;AAfd;AAoBQ;EACE,iBAAA;EACA,sBAAA;AAlBV;AAoBU;EACE,sBAAA;EACA,YAAA;EACA,eAAA;AAlBZ;AAoBY;EACE,uBAAA;EACA,gBAAA;EACA,oCAAA;EACA,iBAAA;EACA,sBAAA;EACA,SAAA;EACA,mBAAA;AAlBd;AAoBc;EACE,WAAA;AAlBhB;AAqBc;EACE,eAAA;AAnBhB;AAuBY;EACE,YAAA;AArBd;AAyBQ;EACE,iBAAA;EACA,kBAAA;EACA,gBAAA;EACA,aAAA;EACA,2BAAA;EACA,sCAAA;EACA,mBAAA;EACA,sCAAA;AAvBV;AA0BQ;;EAEE,eAAA;EACA,yDAAA;AAxBV;;AA+BA;EACE,YAAA;EACA,WAAA;EACA,gBAAA;AA5BF;AA8BE;EACE,qBAAA;EACA,6BAAA;EACA,6BAAA;EACA,aAAA;EACA,2BAAA;EACA,uBAAA;EACA,mBAAA;EACA,QAAA;AA5BJ;AA8BI;EACE,WAAA;AA5BN","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/assets/styles/main.scss"],"names":[],"mappings":"AAEA,mBAAA;AACA;EACE,mBAAA;EACA,wBAAA;EACA,0BAAA;EACA,2BAAA;EACA,aAAA;EACA,aAAA;EAEA,eAAA;EACA,wBAAA;EACA,mBAAA;EACA,gBAAA;EACA,uCAAA;AADF;;AAIA,kBAAA;AACA;;;EAGE,SAAA;EACA,UAAA;EACA,sBAAA;EACA,gCAAA;AADF;;AAIA,oBAAA;AACA;EACE,YAAA;EACA,WAAA;AADF;;AAIA;EACE,yCAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,iBAAA;EACA,2BAAA;AADF;AAGE;EACE,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,OAAA;AADJ;AAGI;EACE,8BAAA;EACA,kBAAA;EACA,aAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,SAAA;EACA,YAAA;AADN;AAGM;EACE,aAAA;EACA,4DAAA;EACA,SAAA;AADR;AAGQ;EACE,8BAAA;EACA,aAAA;EACA,8BAAA;EACA,kBAAA;EACA,aAAA;EACA,QAAA;AADV;AAIQ;EACE,YAAA;AAFV;AAKQ;;EAEE,aAAA;AAHV;AAMQ;EACE,YAAA;EACA,UAAA;EACA,mBAAA;AAJV;AAMU;EACE,WAAA;EACA,eAAA;AAJZ;AAQQ;EACE,YAAA;EACA,2BAAA;EACA,eAAA;AANV;AASQ;EACE,kCAAA;EACA,2BAAA;AAPV;AAWQ;;EAEE,wBAAA;EACA,SAAA;AATV;AAYQ;EACE,iBAAA;EACA,QAAA;AAVV;AAYU;EACE,WAAA;AAVZ;AAaQ;EACE,iBAAA;EACA,QAAA;AAXV;AAaU;EACE,WAAA;AAXZ;AAiBY;EACE,WAAA;AAfd;AAoBQ;EACE,iBAAA;EACA,sBAAA;AAlBV;AAoBU;EACE,sBAAA;EACA,YAAA;EACA,eAAA;AAlBZ;AAoBY;EACE,uBAAA;EACA,gBAAA;EACA,oCAAA;EACA,iBAAA;EACA,sBAAA;EACA,SAAA;EACA,mBAAA;AAlBd;AAoBc;EACE,WAAA;AAlBhB;AAqBc;EACE,eAAA;AAnBhB;AAuBY;EACE,YAAA;AArBd;AAyBQ;EACE,iBAAA;EACA,kBAAA;EACA,gBAAA;EACA,aAAA;EACA,2BAAA;EACA,sCAAA;EACA,mBAAA;EACA,sCAAA;AAvBV;AA0BQ;;EAEE,eAAA;EACA,yDAAA;AAxBV;AA6BQ;EACE,iBAAA;AA3BV;;AAmCA;EACE,YAAA;EACA,WAAA;EACA,gBAAA;AAhCF;AAkCE;EACE,qBAAA;EACA,6BAAA;EACA,6BAAA;EACA,aAAA;EACA,2BAAA;EACA,uBAAA;EACA,mBAAA;EACA,QAAA;AAhCJ;AAkCI;EACE,WAAA;AAhCN","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -749,4 +753,4 @@ var imperialForm = document.querySelector("#imperial-from");
 // console.log(formToObj(document.querySelector("#calorie-form")));
 /******/ })()
 ;
-//# sourceMappingURL=bundle3c52aa3326d09716a820.js.map
+//# sourceMappingURL=bundle8539f65a03a6e7723465.js.map

@@ -4,11 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Goals</title>
-  <script defer src="../bundle3c52aa3326d09716a820.js"></script></head>
+  <script defer src="../bundle8539f65a03a6e7723465.js"></script></head>
   <body>
     <main>
       <div class="card">
-        <form action="" method="get" id="goal-form">
+        <form action="" method="post" id="goal-form">
           <h2>Your Goals</h2>
           <!-- Goal -->
           <div class="input-goal">
@@ -22,14 +22,21 @@
           <!-- Target Weight -->
           <div class="input-target">
             <label for="weight-goal">What is your target weight?</label>
-            <input type="number" name="weight-goal" id="weight-goal" />
-            <span class="input-span">lbs</span>
+            <div class="info-container">
+              <input
+                type="number"
+                name="weight-goal"
+                id="weight-goal"
+                placeholder="0"
+              />
+              <span class="input-span">lbs</span>
+            </div>
           </div>
           <!-- Rate -->
-          <div class="input-rate">
+          <!-- <div class="input-rate">
             <label for="rate">What is your target goal rate?</label>
             <input type="range" name="rate" id="rate" />
-          </div>
+          </div> -->
           <!-- Preferred Diet -->
           <div class="preferred-diet">
             <label for="preferred-diet">What is your preferred diet?</label>
