@@ -20,7 +20,6 @@ const imperialForm = document.querySelector("#imperial-from");
 //   }
 // };
 
-
 // const formToObj = (form) => {
 //   Object.fromEntries(new FormData(form));
 // };
