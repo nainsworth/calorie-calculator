@@ -14,7 +14,6 @@
   --font-regular: 500;
   --font-bold: 800;
   --font-size: clamp(1rem, 3.5vw, 1.2rem);
-
 }
 
 /* Styling Reset */
@@ -150,6 +149,7 @@ body {
               padding: 16px 8px;
               justify-content: start;
               gap: 16px;
+              align-items: center;
 
               input {
                 width: 20px;
