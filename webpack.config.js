@@ -78,7 +78,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       title: "Goals",
-      filename: "goals.html",
+      filename: "calorie-calculator/goals.html",
       template: "./src/templates/goals.html",
     }),
     // new BundleAnalyzerPlugin(),
