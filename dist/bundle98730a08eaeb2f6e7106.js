@@ -2,40 +2,6 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/styles/breakpoints.css":
-/*!************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/styles/breakpoints.css ***!
-  \************************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-// Imports
-
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, `@media screen and (max-width: 670px) {
-  .card {
-    background-color: pink;
-  }
-  #imperial-form {
-    display: flex;
-    flex-direction: column;
-  }
-}`, "",{"version":3,"sources":["webpack://./src/assets/styles/breakpoints.css"],"names":[],"mappings":"AAAA;EACE;IACE,sBAAA;EACF;EAEA;IACE,aAAA;IACA,sBAAA;EAAF;AACF","sourceRoot":""}]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/styles/main.scss":
 /*!******************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/styles/main.scss ***!
@@ -68,7 +34,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/* Root Variables */
   --primary-font: "Roboto";
   --font-regular: 500;
   --font-bold: 800;
-  --font-size: 1.2rem;
+  --font-size: clamp(1rem, 3.5vw, 1.2rem);
 }
 
 /* Styling Reset */
@@ -114,7 +80,7 @@ body main .card {
 }
 body main .card #imperial-form {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 12px;
 }
 body main .card #imperial-form div {
@@ -162,7 +128,7 @@ body main .card #imperial-form .input-name input {
   width: 100%;
 }
 body main .card #imperial-form .input-email {
-  grid-column: 1/3;
+  grid-column: -1/1;
   gap: 8px;
 }
 body main .card #imperial-form .input-email input {
@@ -186,12 +152,13 @@ body main .card #imperial-form .input-activity .activity-container .radio-activi
   border-color: var(--secondary-color);
   padding: 16px 8px;
   justify-content: start;
+  gap: 16px;
 }
 body main .card #imperial-form .input-activity .activity-container .radio-activity input {
   width: 20px;
 }
-body main .card #imperial-form .input-activity .activity-container .radio-activity label {
-  padding: 0 16px;
+body main .card #imperial-form .input-activity .activity-container .radio-activity input:hover {
+  cursor: pointer;
 }
 body main .card #imperial-form .input-activity .activity-container .radio-activity:last-of-type {
   border: none;
@@ -229,7 +196,7 @@ footer .footer-link {
 }
 footer .footer-link .github-image {
   width: 24px;
-}`, "",{"version":3,"sources":["webpack://./src/assets/styles/main.scss"],"names":[],"mappings":"AAEA,mBAAA;AACA;EACE,mBAAA;EACA,wBAAA;EACA,0BAAA;EACA,2BAAA;EACA,aAAA;EACA,aAAA;EAEA,eAAA;EACA,wBAAA;EACA,mBAAA;EACA,gBAAA;EACA,mBAAA;AADF;;AAIA,kBAAA;AACA;;;EAGE,SAAA;EACA,UAAA;EACA,sBAAA;EACA,gCAAA;AADF;;AAIA,oBAAA;AACA;EACE,YAAA;EACA,WAAA;AADF;;AAIA;EACE,yCAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,iBAAA;EACA,2BAAA;AADF;AAGE;EACE,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,OAAA;AADJ;AAGI;EACE,8BAAA;EACA,kBAAA;EACA,aAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,SAAA;EACA,YAAA;AADN;AAGM;EACE,aAAA;EACA,qCAAA;EACA,SAAA;AADR;AAGQ;EACE,8BAAA;EACA,aAAA;EACA,8BAAA;EACA,kBAAA;EACA,aAAA;EACA,QAAA;AADV;AAIQ;EACE,YAAA;AAFV;AAKQ;;EAEE,aAAA;AAHV;AAMQ;EACE,YAAA;EACA,UAAA;EACA,mBAAA;AAJV;AAMU;EACE,WAAA;EACA,eAAA;AAJZ;AAQQ;EACE,YAAA;EACA,2BAAA;AANV;AASQ;EACE,kCAAA;EACA,2BAAA;AAPV;AAWQ;;EAEE,wBAAA;EACA,SAAA;AATV;AAYQ;EACE,iBAAA;EACA,QAAA;AAVV;AAYU;EACE,WAAA;AAVZ;AAaQ;EACE,gBAAA;EACA,QAAA;AAXV;AAaU;EACE,WAAA;AAXZ;AAiBY;EACE,WAAA;AAfd;AAoBQ;EACE,iBAAA;EACA,sBAAA;AAlBV;AAoBU;EACE,sBAAA;EACA,YAAA;EACA,eAAA;AAlBZ;AAoBY;EACE,uBAAA;EACA,gBAAA;EACA,oCAAA;EACA,iBAAA;EACA,sBAAA;AAlBd;AAoBc;EACE,WAAA;AAlBhB;AAqBc;EACE,eAAA;AAnBhB;AAuBY;EACE,YAAA;AArBd;AAyBQ;EACE,iBAAA;EACA,kBAAA;EACA,gBAAA;EACA,aAAA;EACA,2BAAA;EACA,sCAAA;EACA,mBAAA;EACA,sCAAA;AAvBV;AA0BQ;;EAEE,eAAA;EACA,yDAAA;AAxBV;;AA+BA;EACE,YAAA;EACA,WAAA;EACA,gBAAA;AA5BF;AA8BE;EACE,qBAAA;EACA,6BAAA;EACA,6BAAA;EACA,aAAA;EACA,2BAAA;EACA,uBAAA;EACA,mBAAA;EACA,QAAA;AA5BJ;AA8BI;EACE,WAAA;AA5BN","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/assets/styles/main.scss"],"names":[],"mappings":"AAEA,mBAAA;AACA;EACE,mBAAA;EACA,wBAAA;EACA,0BAAA;EACA,2BAAA;EACA,aAAA;EACA,aAAA;EAEA,eAAA;EACA,wBAAA;EACA,mBAAA;EACA,gBAAA;EACA,uCAAA;AADF;;AAKA,kBAAA;AACA;;;EAGE,SAAA;EACA,UAAA;EACA,sBAAA;EACA,gCAAA;AAFF;;AAKA,oBAAA;AACA;EACE,YAAA;EACA,WAAA;AAFF;;AAKA;EACE,yCAAA;EACA,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,iBAAA;EACA,2BAAA;AAFF;AAIE;EACE,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,OAAA;AAFJ;AAII;EACE,8BAAA;EACA,kBAAA;EACA,aAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,SAAA;EACA,YAAA;AAFN;AAIM;EACE,aAAA;EACA,4DAAA;EACA,SAAA;AAFR;AAIQ;EACE,8BAAA;EACA,aAAA;EACA,8BAAA;EACA,kBAAA;EACA,aAAA;EACA,QAAA;AAFV;AAKQ;EACE,YAAA;AAHV;AAMQ;;EAEE,aAAA;AAJV;AAOQ;EACE,YAAA;EACA,UAAA;EACA,mBAAA;AALV;AAOU;EACE,WAAA;EACA,eAAA;AALZ;AASQ;EACE,YAAA;EACA,2BAAA;AAPV;AAUQ;EACE,kCAAA;EACA,2BAAA;AARV;AAYQ;;EAEE,wBAAA;EACA,SAAA;AAVV;AAaQ;EACE,iBAAA;EACA,QAAA;AAXV;AAaU;EACE,WAAA;AAXZ;AAcQ;EACE,iBAAA;EACA,QAAA;AAZV;AAcU;EACE,WAAA;AAZZ;AAkBY;EACE,WAAA;AAhBd;AAqBQ;EACE,iBAAA;EACA,sBAAA;AAnBV;AAqBU;EACE,sBAAA;EACA,YAAA;EACA,eAAA;AAnBZ;AAqBY;EACE,uBAAA;EACA,gBAAA;EACA,oCAAA;EACA,iBAAA;EACA,sBAAA;EACA,SAAA;AAnBd;AAqBc;EACE,WAAA;AAnBhB;AAsBc;EACE,eAAA;AApBhB;AAwBY;EACE,YAAA;AAtBd;AA0BQ;EACE,iBAAA;EACA,kBAAA;EACA,gBAAA;EACA,aAAA;EACA,2BAAA;EACA,sCAAA;EACA,mBAAA;EACA,sCAAA;AAxBV;AA2BQ;;EAEE,eAAA;EACA,yDAAA;AAzBV;;AAgCA;EACE,YAAA;EACA,WAAA;EACA,gBAAA;AA7BF;AA+BE;EACE,qBAAA;EACA,6BAAA;EACA,6BAAA;EACA,aAAA;EACA,2BAAA;EACA,uBAAA;EACA,mBAAA;EACA,QAAA;AA7BJ;AA+BI;EACE,WAAA;AA7BN","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -352,58 +319,6 @@ module.exports = function (item) {
   }
   return [content].join("\n");
 };
-
-/***/ }),
-
-/***/ "./src/assets/styles/breakpoints.css":
-/*!*******************************************!*\
-  !*** ./src/assets/styles/breakpoints.css ***!
-  \*******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_breakpoints_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/dist/cjs.js!./breakpoints.css */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/styles/breakpoints.css");
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-
-var options = {};
-
-options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
-options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
-options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
-options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
-options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_breakpoints_css__WEBPACK_IMPORTED_MODULE_6__["default"], options);
-
-
-
-
-       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_breakpoints_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_breakpoints_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_dist_cjs_js_breakpoints_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
-
 
 /***/ }),
 
@@ -805,8 +720,6 @@ var __webpack_exports__ = {};
   \*************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/styles/main.scss */ "./src/assets/styles/main.scss");
-/* harmony import */ var _assets_styles_breakpoints_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../assets/styles/breakpoints.css */ "./src/assets/styles/breakpoints.css");
-
 
 var imperial = document.querySelector("#imperial");
 var imperialForm = document.querySelector("#imperial-from");
@@ -835,4 +748,4 @@ var imperialForm = document.querySelector("#imperial-from");
 // console.log(formToObj(document.querySelector("#calorie-form")));
 /******/ })()
 ;
-//# sourceMappingURL=bundlee7b23cbcea40bbdd3b0b.js.map
+//# sourceMappingURL=bundle98730a08eaeb2f6e7106.js.map
