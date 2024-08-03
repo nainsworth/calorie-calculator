@@ -11,6 +11,16 @@
 // optional
 // npm i axios
 
+// For posting live to git hub
+// Step 1
+// Remove the dist directory from the project’s .gitignore file.
+
+// Step 2
+// git add dist && git commit -m "Initial dist subtree commit"
+
+// Step 3
+// git subtree push --prefix dist origin gh-pages
+
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 // npm i -D webpack-bundle-analyzer

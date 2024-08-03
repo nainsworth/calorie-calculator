@@ -9,7 +9,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "calorie-calculator"
+    "url": "calorie-calculator",
+    "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "keywords": [],
   "author": "Nicholas Ainsworth",
