@@ -29,11 +29,11 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   mode: "development",
   entry: {
-    bundle: path.resolve(__dirname, "src/js/index.js"),
+    index: "./src/js/index.js",
   },
   output: {
     path: path.resolve(__dirname, "dist/"),
-    filename: "[name][contenthash].js",
+    filename: "[name].bundle.js",
     clean: true,
     assetModuleFilename: "[name][ext]",
   },
@@ -74,7 +74,22 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "Calorie Calculator",
       filename: "index.html",
-      template: "src/templates/index.html",
+      template: "src/views/index.html",
+    }),
+    new HtmlWebpackPlugin({
+      title: "Goals",
+      filename: "goals.html",
+      template: "src/views/goals.html",
+    }),
+    new HtmlWebpackPlugin({
+      title: "Calories Options",
+      filename: "calories.html",
+      template: "src/views/calories.html",
+    }),
+    new HtmlWebpackPlugin({
+      title: "Results",
+      filename: "results.html",
+      template: "src/views/results.html",
     }),
     // new BundleAnalyzerPlugin(),
   ],

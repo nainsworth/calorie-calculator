@@ -1,7 +1,10 @@
 import "../assets/styles/main.scss";
+// import "../assets/styles/index.scss";
+// import "../assets/styles/goals.scss";
+// import "../assets/styles/calories.scss";
+// import "../assets/styles/results.scss";
 
-const imperial = document.querySelector("#imperial");
-const imperialForm = document.querySelector("#imperial-from");
+
 
 // const units = document.querySelectorAll("input[name=radio-units]");
 // units.forEach((unit) =>
