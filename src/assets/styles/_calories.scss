@@ -3,10 +3,11 @@
 #calorie-form {
   .radio-container {
     justify-content: start;
-    gap: 12px;
+    gap: 18px;
+    padding: 12px 18px;
 
     label {
-      font-weight: $font-bold;
+      font-weight: $font-semi-bold;
       font-size: 1.5rem;
 
       span {
