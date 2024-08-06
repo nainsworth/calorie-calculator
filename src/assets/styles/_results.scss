@@ -1,0 +1,14 @@
+#results-form {
+  span {
+    font-weight: $font-semi-bold;
+  }
+
+  .calorie-breakdown {
+    flex-direction: column;
+  }
+
+  .range-container {
+    flex-direction: column;
+    padding: 18px;
+  }
+}
