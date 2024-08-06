@@ -7,7 +7,33 @@
   <script defer src="index.bundle.js"></script></head>
   <body>
     <main>
-      <div class="card"></div>
+      <div class="card">
+        <form action="" method="post" id="results-form">
+          <h1>Results</h1>
+          <div class="calorie-breakdown">
+          <h2>3300 Calories</h2>
+
+            <div class="macro-breakdown">
+              <p>Protein: <span>212g</span></p>
+              <p>Carbs: <span>405g</span></p>
+              <p>Fats: <span>87g</span></p>
+              <p>Fiber: <span>38g</span></p>
+            </div>
+          </div>
+
+          <div class="range-container">
+            <label for="protein-ratio">Protein: <span>30%</span></label>
+            <input type="range" name="protein-ratio" id="protein-ratio" value="30" max="50"/>
+            <label for="carb-ratio">Carb: <span>40%</span></label>
+            <input type="range" name="carb-ratio" id="carb-ratio" value="40" max="50"/>
+            <label for="fat-ratio">Fat: <span>30%</span></label>
+            <input type="range" name="fat-ratio" id="fat-ratio" value="30" max="50"/>
+          </div>
+
+          <input type="button" value="Send in an Email" />
+          <input type="button" value="Start Over" />
+        </form>
+      </div>
     </main>
     <footer><a
   class="footer-link"
