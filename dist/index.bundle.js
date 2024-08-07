@@ -99,6 +99,15 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/* Primary Colors */
 }
 #results-form .calorie-breakdown {
   flex-direction: column;
+  text-align: center;
+}
+#results-form .calorie-breakdown .total-calories {
+  justify-content: center;
+  border: none;
+}
+#results-form .calorie-breakdown .macro-breakdown {
+  border: none;
+  gap: 18px;
 }
 #results-form .range-container {
   flex-direction: column;
@@ -204,13 +213,12 @@ body main .card form input[type=button]:active {
   cursor: pointer;
   background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
 }
-
-footer {
+body footer {
   padding: 8px;
   width: 100%;
   margin-top: auto;
 }
-footer .footer-link {
+body footer .footer-link {
   text-decoration: none;
   color: #b8c0cc;
   font-weight: 800;
@@ -220,9 +228,9 @@ footer .footer-link {
   align-items: center;
   gap: 4px;
 }
-footer .footer-link .github-image {
+body footer .footer-link .github-image {
   width: 24px;
-}`, "",{"version":3,"sources":["webpack://./src/assets/styles/_variables.scss","webpack://./src/assets/styles/_index.scss","webpack://./src/assets/styles/main.scss","webpack://./src/assets/styles/_goals.scss","webpack://./src/assets/styles/_calories.scss","webpack://./src/assets/styles/_results.scss"],"names":[],"mappings":"AAEA,mBAAA;AAOA,eAAA;ACTA;EACE,iBAAA;EACA,QAAA;ACKF;ADHE;EACE,WAAA;ACKJ;;ADFA;EACE,iBAAA;EACA,QAAA;ACKF;ADHE;EACE,WAAA;ACKJ;;ADCI;EACE,WAAA;ACEN;;ADGA;EACE,iBAAA;EACA,sBAAA;ACAF;ADEE;EACE,sBAAA;EACA,YAAA;EACA,eAAA;ACAJ;ADEI;EACE,uBAAA;EACA,gBAAA;EACA,oCAAA;EACA,iBAAA;EACA,sBAAA;EACA,SAAA;EACA,mBAAA;ACAN;ADEM;EACE,WAAA;ACAR;ADGM;EACE,eAAA;ACDR;ADKI;EACE,YAAA;ACHN;;ACjDE;EACE,iBAAA;ADoDJ;;AFpDA,mBAAA;AAOA,eAAA;AINE;EACE,sBAAA;EACA,SAAA;EACA,kBAAA;AFwDJ;AEtDI;EACE,gBJGW;EIFX,iBAAA;AFwDN;AEtDM;EACE,cJVQ;EIWR,qCAAA;EACA,iBAAA;AFwDR;;AGtEE;EACE,gBLUa;AE+DjB;AGtEE;EACE,sBAAA;AHwEJ;AGrEE;EACE,sBAAA;EACA,aAAA;AHuEJ;;AA5EA,kBAAA;AACA;;;EAGE,SAAA;EACA,UAAA;EACA,sBAAA;EACA,qBFHa;AEkFf;;AA5EA,oBAAA;AACA;EACE,YAAA;EACA,WAAA;AA+EF;;AA5EA;EACE,yBFlBiB;EEmBjB,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,iBAAA;EACA,qCFdU;AE6FZ;AA7EE;EACE,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,OAAA;AA+EJ;AA7EI;EACE,sBFhCE;EEiCF,kBAAA;EACA,aAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,SAAA;EACA,YAAA;AA+EN;AA7EM;EACE,aAAA;EACA,4DAAA;EACA,SAAA;AA+ER;AA7EQ;EACE,sBAAA;EACA,aAAA;EACA,8BAAA;EACA,kBAAA;EACA,aAAA;EACA,QAAA;AA+EV;AA5EQ;EACE,YAAA;AA8EV;AA3EQ;;EAEE,aAAA;AA6EV;AA1EQ;EACE,YAAA;EACA,UAAA;EACA,mBAAA;AA4EV;AA1EU;EACE,WAAA;EACA,eAAA;AA4EZ;AAxEQ;EACE,YAAA;EACA,qCFrEE;EEsEF,eAAA;AA0EV;AAvEQ;EACE,qBFrFM;EEsFN,qCF3EE;AEoJZ;AArEQ;;EAEE,wBAAA;EACA,SAAA;AAuEV;AApEQ;EACE,iBAAA;EACA,kBAAA;EACA,gBAAA;EACA,aAAA;EACA,qCF1FE;EE2FF,yBFtGM;EEuGN,WFpGF;EEqGE,yBAAA;AAsEV;AAnEQ;;EAEE,eAAA;EACA,yDAAA;AAqEV;;AA9DA;EACE,YAAA;EACA,WAAA;EACA,gBAAA;AAiEF;AA/DE;EACE,qBAAA;EACA,cF3Hc;EE4Hd,gBFnHQ;EEoHR,aAAA;EACA,2BAAA;EACA,uBAAA;EACA,mBAAA;EACA,QAAA;AAiEJ;AA/DI;EACE,WAAA;AAiEN","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/assets/styles/_variables.scss","webpack://./src/assets/styles/_index.scss","webpack://./src/assets/styles/main.scss","webpack://./src/assets/styles/_goals.scss","webpack://./src/assets/styles/_calories.scss","webpack://./src/assets/styles/_results.scss"],"names":[],"mappings":"AAEA,mBAAA;AAOA,eAAA;ACTA;EACE,iBAAA;EACA,QAAA;ACKF;ADHE;EACE,WAAA;ACKJ;;ADFA;EACE,iBAAA;EACA,QAAA;ACKF;ADHE;EACE,WAAA;ACKJ;;ADCI;EACE,WAAA;ACEN;;ADGA;EACE,iBAAA;EACA,sBAAA;ACAF;ADEE;EACE,sBAAA;EACA,YAAA;EACA,eAAA;ACAJ;ADEI;EACE,uBAAA;EACA,gBAAA;EACA,oCAAA;EACA,iBAAA;EACA,sBAAA;EACA,SAAA;EACA,mBAAA;ACAN;ADEM;EACE,WAAA;ACAR;ADGM;EACE,eAAA;ACDR;ADKI;EACE,YAAA;ACHN;;ACjDE;EACE,iBAAA;ADoDJ;;AFpDA,mBAAA;AAOA,eAAA;AINE;EACE,sBAAA;EACA,SAAA;EACA,kBAAA;AFwDJ;AEtDI;EACE,gBJGW;EIFX,iBAAA;AFwDN;AEtDM;EACE,cJVQ;EIWR,qCAAA;EACA,iBAAA;AFwDR;;AGrEE;EACE,gBLSa;AE+DjB;AGrEE;EACE,sBAAA;EACA,kBAAA;AHuEJ;AGrEI;EACE,uBAAA;EACA,YAAA;AHuEN;AGpEI;EACE,YAAA;EACA,SAAA;AHsEN;AGhEE;EACE,sBAAA;EACA,aAAA;AHkEJ;;AArFA,kBAAA;AACA;;;EAGE,SAAA;EACA,UAAA;EACA,sBAAA;EACA,qBFHa;AE2Ff;;AArFA,oBAAA;AACA;EACE,YAAA;EACA,WAAA;AAwFF;;AArFA;EACE,yBFlBiB;EEmBjB,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,iBAAA;EACA,qCFdU;AEsGZ;AAtFE;EACE,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,OAAA;AAwFJ;AAtFI;EACE,sBFhCE;EEiCF,kBAAA;EACA,aAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,SAAA;EACA,YAAA;AAwFN;AAlFM;EACE,aAAA;EACA,4DAAA;EACA,SAAA;AAoFR;AAlFQ;EACE,sBAAA;EACA,aAAA;EACA,8BAAA;EACA,kBAAA;EACA,aAAA;EACA,QAAA;AAoFV;AAjFQ;EACE,YAAA;AAmFV;AAhFQ;;EAEE,aAAA;AAkFV;AA/EQ;EACE,YAAA;EACA,UAAA;EACA,mBAAA;AAiFV;AA/EU;EACE,WAAA;EACA,eAAA;AAiFZ;AA7EQ;EACE,YAAA;EACA,qCFzEE;EE0EF,eAAA;AA+EV;AA5EQ;EACE,qBFzFM;EE0FN,qCF/EE;AE6JZ;AA1EQ;;EAEE,wBAAA;EACA,SAAA;AA4EV;AAzEQ;EACE,iBAAA;EACA,kBAAA;EACA,gBAAA;EACA,aAAA;EACA,qCF9FE;EE+FF,yBF1GM;EE2GN,WFxGF;EEyGE,yBAAA;AA2EV;AAxEQ;;EAEE,eAAA;EACA,yDAAA;AA0EV;AApEE;EACE,YAAA;EACA,WAAA;EACA,gBAAA;AAsEJ;AApEI;EACE,qBAAA;EACA,cF9HY;EE+HZ,gBFtHM;EEuHN,aAAA;EACA,2BAAA;EACA,uBAAA;EACA,mBAAA;EACA,QAAA;AAsEN;AApEM;EACE,WAAA;AAsER","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
