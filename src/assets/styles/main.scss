@@ -45,6 +45,10 @@ body {
       gap: 16px;
       margin: 16px;
 
+      // h1 {
+      //   text-align: center;
+      // }
+
       form {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -116,25 +120,25 @@ body {
       }
     }
   }
-}
 
-footer {
-  padding: 8px;
-  width: 100%;
-  margin-top: auto;
+  footer {
+    padding: 8px;
+    width: 100%;
+    margin-top: auto;
 
-  .footer-link {
-    text-decoration: none;
-    color: $secondary-color;
-    font-weight: $font-bold;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: center;
-    align-items: center;
-    gap: 4px;
+    .footer-link {
+      text-decoration: none;
+      color: $secondary-color;
+      font-weight: $font-bold;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
 
-    .github-image {
-      width: 24px;
+      .github-image {
+        width: 24px;
+      }
     }
   }
 }

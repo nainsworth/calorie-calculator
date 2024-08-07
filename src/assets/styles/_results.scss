@@ -1,10 +1,24 @@
 #results-form {
+  
   span {
     font-weight: $font-semi-bold;
   }
 
   .calorie-breakdown {
     flex-direction: column;
+    text-align: center;
+
+    .total-calories {
+      justify-content: center;
+      border: none;
+    }
+
+    .macro-breakdown {
+      border: none;
+      gap: 18px;
+
+      
+    }
   }
 
   .range-container {

@@ -8,10 +8,15 @@
   <body>
     <main>
       <div class="card">
+        <h1>Results</h1>
+
         <form action="" method="post" id="results-form">
-          <h1>Results</h1>
           <div class="calorie-breakdown">
-          <h2>3300 Calories</h2>
+            <div class="total-calories">
+              <h2>//</h2>
+              <h2>Calories: 3300</h2>
+              <h2>//</h2>
+            </div>
 
             <div class="macro-breakdown">
               <p>Protein: <span>212g</span></p>
@@ -23,11 +28,29 @@
 
           <div class="range-container">
             <label for="protein-ratio">Protein: <span>30%</span></label>
-            <input type="range" name="protein-ratio" id="protein-ratio" value="30" max="50"/>
+            <input
+              type="range"
+              name="protein-ratio"
+              id="protein-ratio"
+              value="30"
+              max="50"
+            />
             <label for="carb-ratio">Carb: <span>40%</span></label>
-            <input type="range" name="carb-ratio" id="carb-ratio" value="40" max="50"/>
+            <input
+              type="range"
+              name="carb-ratio"
+              id="carb-ratio"
+              value="40"
+              max="50"
+            />
             <label for="fat-ratio">Fat: <span>30%</span></label>
-            <input type="range" name="fat-ratio" id="fat-ratio" value="30" max="50"/>
+            <input
+              type="range"
+              name="fat-ratio"
+              id="fat-ratio"
+              value="30"
+              max="50"
+            />
           </div>
 
           <input type="button" value="Send in an Email" />
