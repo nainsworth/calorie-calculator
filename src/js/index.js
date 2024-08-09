@@ -1,10 +1,6 @@
 import "../assets/styles/main.scss";
-// import "../assets/styles/index.scss";
-// import "../assets/styles/goals.scss";
-// import "../assets/styles/calories.scss";
-// import "../assets/styles/results.scss";
 
-
+import "./results";
 
 // const units = document.querySelectorAll("input[name=radio-units]");
 // units.forEach((unit) =>

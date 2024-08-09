@@ -7,6 +7,7 @@
   .calorie-breakdown {
     flex-direction: column;
     text-align: center;
+    gap: 0;
 
     .total-calories {
       justify-content: center;
@@ -16,8 +17,6 @@
     .macro-breakdown {
       border: none;
       gap: 18px;
-
-      
     }
   }
 

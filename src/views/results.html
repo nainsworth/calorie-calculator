@@ -27,34 +27,46 @@
           </div>
 
           <div class="range-container">
-            <label for="protein-ratio">Protein: <span>30%</span></label>
+            <label for="protein-ratio-slider"
+              >Protein: <span id="protein-ratio">30%</span></label
+            >
             <input
               type="range"
-              name="protein-ratio"
-              id="protein-ratio"
+              name="protein-ratio-slider"
+              id="protein-ratio-slider"
               value="30"
-              max="50"
+              min="10"
+              max="40"
             />
-            <label for="carb-ratio">Carb: <span>40%</span></label>
+
+            <label for="fat-ratio-slider"
+              >Fat: <span id="fat-ratio">30%</span></label
+            >
             <input
               type="range"
-              name="carb-ratio"
-              id="carb-ratio"
+              name="fat-ratio-slider"
+              id="fat-ratio-slider"
+              value="30"
+              min="20"
+              max="40"
+            />
+            <label for="carb-ratio-slider"
+              >Carb: <span id="carb-ratio">40%</span></label
+            >
+            <input
+              type="range"
+              name="carb-ratio-slider"
+              id="carb-ratio-slider"
               value="40"
-              max="50"
-            />
-            <label for="fat-ratio">Fat: <span>30%</span></label>
-            <input
-              type="range"
-              name="fat-ratio"
-              id="fat-ratio"
-              value="30"
-              max="50"
+              min="20"
+              max="60"
             />
           </div>
 
-          <input type="button" value="Send in an Email" />
-          <input type="button" value="Start Over" />
+          <div class="btn-container">
+            <input class="primary-btn" type="button" value="Send in an Email" />
+            <input class="secondary-btn" type="button" value="Start Over" />
+          </div>
         </form>
       </div>
     </main>

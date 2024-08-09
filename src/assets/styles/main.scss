@@ -101,21 +101,36 @@ body {
           margin: 0;
         }
 
-        input[type="button"] {
-          grid-column: -1/1;
-          border-radius: 8px;
-          margin-top: 16px;
-          padding: 12px;
-          font-size: $font-size;
-          background-color: $primary-color;
-          color: $white;
-          border: 1ps solid $primary-color;
-        }
+        .btn-container {
+          border: none;
+          padding: 16px 0 0 0;
 
-        input[type="button"]:hover,
-        input[type="button"]:active {
-          cursor: pointer;
-          background-image: linear-gradient(rgb(0 0 0/10%) 0 0);
+          input[type="button"] {
+            border-radius: 8px;
+            // margin-top: 16px;
+            font-size: $font-size;
+            padding: 12px;
+            border: 2px solid $primary-color;
+            font-weight: $font-semi-bold;
+          }
+
+          .primary-btn {
+            background-color: $primary-color;
+            color: $white;
+            flex: 1;
+          }
+
+          .secondary-btn {
+            background-color: $white;
+            color: $primary-color;
+            flex: 1;
+          }
+
+          input[type="button"]:hover,
+          input[type="button"]:active {
+            cursor: pointer;
+            background-image: linear-gradient(rgb(0 0 0/10%) 0 0);
+          }
         }
       }
     }
