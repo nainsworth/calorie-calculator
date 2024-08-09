@@ -1,6 +1,52 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
+
+/***/ "./src/js/results.js":
+/*!***************************!*\
+  !*** ./src/js/results.js ***!
+  \***************************/
+/***/ (() => {
+
+var proteinRatio = document.getElementById("protein-ratio");
+var carbRatio = document.getElementById("carb-ratio");
+var fatRatio = document.getElementById("fat-ratio");
+var carbSlider = document.getElementById("carb-ratio-slider");
+var fatSlider = document.getElementById("fat-ratio-slider");
+var macroSliders = document.querySelectorAll('input[type="range"]');
+var ratioArray = [];
+
+// Macro Range Slider Event Listener
+macroSliders.forEach(function (slider) {
+  ratioArray.push(slider.value);
+  slider.oninput = function (e) {
+    return updateMacroInfo(e);
+  };
+});
+
+// Updates Macro Info
+var updateMacroInfo = function updateMacroInfo(e) {
+  if (e.target.name == "protein-ratio-slider") {
+    ratioArray[0] = e.target.value;
+    ratioArray[2] = 100 - ratioArray[0] - ratioArray[1];
+    proteinRatio.innerText = "".concat(ratioArray[0], "%");
+    carbRatio.innerText = "".concat(ratioArray[2], "%");
+    carbSlider.value = ratioArray[2];
+  } else if (e.target.name == "fat-ratio-slider") {
+    ratioArray[1] = e.target.value;
+    ratioArray[2] = 100 - ratioArray[0] - ratioArray[1];
+    fatRatio.innerText = "".concat(ratioArray[1], "%");
+    carbRatio.innerText = "".concat(ratioArray[2], "%");
+    carbSlider.value = ratioArray[2];
+  } else if (e.target.name == "carb-ratio-slider") {
+    ratioArray[2] = e.target.value;
+    ratioArray[1] = 100 - ratioArray[0] - ratioArray[2];
+    carbRatio.innerText = "".concat(ratioArray[2], "%");
+    fatRatio.innerText = "".concat(ratioArray[1], "%");
+    fatSlider.value = ratioArray[1];
+  }
+};
+
+/***/ }),
 
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/styles/main.scss":
 /*!******************************************************************************************************************!*\
@@ -8,6 +54,7 @@
   \******************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -57,7 +104,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/* Primary Colors */
 .input-activity .activity-container .radio-activity {
   border-width: 0 0 1px 0;
   border-radius: 0;
-  border-color: var(--secondary-color);
+  border-color: #b8c0cc;
   padding: 16px 8px;
   justify-content: start;
   gap: 16px;
@@ -100,6 +147,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/* Primary Colors */
 #results-form .calorie-breakdown {
   flex-direction: column;
   text-align: center;
+  gap: 0;
 }
 #results-form .calorie-breakdown .total-calories {
   justify-content: center;
@@ -198,18 +246,29 @@ body main .card form input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-body main .card form input[type=button] {
-  grid-column: -1/1;
+body main .card form .btn-container {
+  border: none;
+  padding: 16px 0 0 0;
+}
+body main .card form .btn-container input[type=button] {
   border-radius: 8px;
-  margin-top: 16px;
-  padding: 12px;
   font-size: clamp(1rem, 3.5vw, 1.2rem);
+  padding: 12px;
+  border: 2px solid #456aff;
+  font-weight: 600;
+}
+body main .card form .btn-container .primary-btn {
   background-color: #456aff;
   color: #fff;
-  border: 1ps solid #456aff;
+  flex: 1;
 }
-body main .card form input[type=button]:hover,
-body main .card form input[type=button]:active {
+body main .card form .btn-container .secondary-btn {
+  background-color: #fff;
+  color: #456aff;
+  flex: 1;
+}
+body main .card form .btn-container input[type=button]:hover,
+body main .card form .btn-container input[type=button]:active {
   cursor: pointer;
   background-image: linear-gradient(rgba(0, 0, 0, 0.1) 0 0);
 }
@@ -230,7 +289,7 @@ body footer .footer-link {
 }
 body footer .footer-link .github-image {
   width: 24px;
-}`, "",{"version":3,"sources":["webpack://./src/assets/styles/_variables.scss","webpack://./src/assets/styles/_index.scss","webpack://./src/assets/styles/main.scss","webpack://./src/assets/styles/_goals.scss","webpack://./src/assets/styles/_calories.scss","webpack://./src/assets/styles/_results.scss"],"names":[],"mappings":"AAEA,mBAAA;AAOA,eAAA;ACTA;EACE,iBAAA;EACA,QAAA;ACKF;ADHE;EACE,WAAA;ACKJ;;ADFA;EACE,iBAAA;EACA,QAAA;ACKF;ADHE;EACE,WAAA;ACKJ;;ADCI;EACE,WAAA;ACEN;;ADGA;EACE,iBAAA;EACA,sBAAA;ACAF;ADEE;EACE,sBAAA;EACA,YAAA;EACA,eAAA;ACAJ;ADEI;EACE,uBAAA;EACA,gBAAA;EACA,oCAAA;EACA,iBAAA;EACA,sBAAA;EACA,SAAA;EACA,mBAAA;ACAN;ADEM;EACE,WAAA;ACAR;ADGM;EACE,eAAA;ACDR;ADKI;EACE,YAAA;ACHN;;ACjDE;EACE,iBAAA;ADoDJ;;AFpDA,mBAAA;AAOA,eAAA;AINE;EACE,sBAAA;EACA,SAAA;EACA,kBAAA;AFwDJ;AEtDI;EACE,gBJGW;EIFX,iBAAA;AFwDN;AEtDM;EACE,cJVQ;EIWR,qCAAA;EACA,iBAAA;AFwDR;;AGrEE;EACE,gBLSa;AE+DjB;AGrEE;EACE,sBAAA;EACA,kBAAA;AHuEJ;AGrEI;EACE,uBAAA;EACA,YAAA;AHuEN;AGpEI;EACE,YAAA;EACA,SAAA;AHsEN;AGhEE;EACE,sBAAA;EACA,aAAA;AHkEJ;;AArFA,kBAAA;AACA;;;EAGE,SAAA;EACA,UAAA;EACA,sBAAA;EACA,qBFHa;AE2Ff;;AArFA,oBAAA;AACA;EACE,YAAA;EACA,WAAA;AAwFF;;AArFA;EACE,yBFlBiB;EEmBjB,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,iBAAA;EACA,qCFdU;AEsGZ;AAtFE;EACE,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,OAAA;AAwFJ;AAtFI;EACE,sBFhCE;EEiCF,kBAAA;EACA,aAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,SAAA;EACA,YAAA;AAwFN;AAlFM;EACE,aAAA;EACA,4DAAA;EACA,SAAA;AAoFR;AAlFQ;EACE,sBAAA;EACA,aAAA;EACA,8BAAA;EACA,kBAAA;EACA,aAAA;EACA,QAAA;AAoFV;AAjFQ;EACE,YAAA;AAmFV;AAhFQ;;EAEE,aAAA;AAkFV;AA/EQ;EACE,YAAA;EACA,UAAA;EACA,mBAAA;AAiFV;AA/EU;EACE,WAAA;EACA,eAAA;AAiFZ;AA7EQ;EACE,YAAA;EACA,qCFzEE;EE0EF,eAAA;AA+EV;AA5EQ;EACE,qBFzFM;EE0FN,qCF/EE;AE6JZ;AA1EQ;;EAEE,wBAAA;EACA,SAAA;AA4EV;AAzEQ;EACE,iBAAA;EACA,kBAAA;EACA,gBAAA;EACA,aAAA;EACA,qCF9FE;EE+FF,yBF1GM;EE2GN,WFxGF;EEyGE,yBAAA;AA2EV;AAxEQ;;EAEE,eAAA;EACA,yDAAA;AA0EV;AApEE;EACE,YAAA;EACA,WAAA;EACA,gBAAA;AAsEJ;AApEI;EACE,qBAAA;EACA,cF9HY;EE+HZ,gBFtHM;EEuHN,aAAA;EACA,2BAAA;EACA,uBAAA;EACA,mBAAA;EACA,QAAA;AAsEN;AApEM;EACE,WAAA;AAsER","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/assets/styles/_variables.scss","webpack://./src/assets/styles/_index.scss","webpack://./src/assets/styles/main.scss","webpack://./src/assets/styles/_goals.scss","webpack://./src/assets/styles/_calories.scss","webpack://./src/assets/styles/_results.scss"],"names":[],"mappings":"AAEA,mBAAA;AAOA,eAAA;ACTA;EACE,iBAAA;EACA,QAAA;ACKF;ADHE;EACE,WAAA;ACKJ;;ADFA;EACE,iBAAA;EACA,QAAA;ACKF;ADHE;EACE,WAAA;ACKJ;;ADCI;EACE,WAAA;ACEN;;ADGA;EACE,iBAAA;EACA,sBAAA;ACAF;ADEE;EACE,sBAAA;EACA,YAAA;EACA,eAAA;ACAJ;ADEI;EACE,uBAAA;EACA,gBAAA;EACA,qBDjCY;ECkCZ,iBAAA;EACA,sBAAA;EACA,SAAA;EACA,mBAAA;ACAN;ADEM;EACE,WAAA;ACAR;ADGM;EACE,eAAA;ACDR;ADKI;EACE,YAAA;ACHN;;ACjDE;EACE,iBAAA;ADoDJ;;AFpDA,mBAAA;AAOA,eAAA;AINE;EACE,sBAAA;EACA,SAAA;EACA,kBAAA;AFwDJ;AEtDI;EACE,gBJGW;EIFX,iBAAA;AFwDN;AEtDM;EACE,cJVQ;EIWR,qCAAA;EACA,iBAAA;AFwDR;;AGrEE;EACE,gBLSa;AE+DjB;AGrEE;EACE,sBAAA;EACA,kBAAA;EACA,MAAA;AHuEJ;AGrEI;EACE,uBAAA;EACA,YAAA;AHuEN;AGpEI;EACE,YAAA;EACA,SAAA;AHsEN;AGlEE;EACE,sBAAA;EACA,aAAA;AHoEJ;;AAtFA,kBAAA;AACA;;;EAGE,SAAA;EACA,UAAA;EACA,sBAAA;EACA,qBFHa;AE4Ff;;AAtFA,oBAAA;AACA;EACE,YAAA;EACA,WAAA;AAyFF;;AAtFA;EACE,yBFlBiB;EEmBjB,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,iBAAA;EACA,qCFdU;AEuGZ;AAvFE;EACE,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,OAAA;AAyFJ;AAvFI;EACE,sBFhCE;EEiCF,kBAAA;EACA,aAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,SAAA;EACA,YAAA;AAyFN;AAnFM;EACE,aAAA;EACA,4DAAA;EACA,SAAA;AAqFR;AAnFQ;EACE,sBAAA;EACA,aAAA;EACA,8BAAA;EACA,kBAAA;EACA,aAAA;EACA,QAAA;AAqFV;AAlFQ;EACE,YAAA;AAoFV;AAjFQ;;EAEE,aAAA;AAmFV;AAhFQ;EACE,YAAA;EACA,UAAA;EACA,mBAAA;AAkFV;AAhFU;EACE,WAAA;EACA,eAAA;AAkFZ;AA9EQ;EACE,YAAA;EACA,qCFzEE;EE0EF,eAAA;AAgFV;AA7EQ;EACE,qBFzFM;EE0FN,qCF/EE;AE8JZ;AA3EQ;;EAEE,wBAAA;EACA,SAAA;AA6EV;AA1EQ;EACE,YAAA;EACA,mBAAA;AA4EV;AA1EU;EACE,kBAAA;EAEA,qCFhGA;EEiGA,aAAA;EACA,yBAAA;EACA,gBFrGK;AEgLjB;AAxEU;EACE,yBFlHI;EEmHJ,WFhHJ;EEiHI,OAAA;AA0EZ;AAvEU;EACE,sBFrHJ;EEsHI,cFzHI;EE0HJ,OAAA;AAyEZ;AAtEU;;EAEE,eAAA;EACA,yDAAA;AAwEZ;AAjEE;EACE,YAAA;EACA,WAAA;EACA,gBAAA;AAmEJ;AAjEI;EACE,qBAAA;EACA,cF7IY;EE8IZ,gBFrIM;EEsIN,aAAA;EACA,2BAAA;EACA,uBAAA;EACA,mBAAA;EACA,QAAA;AAmEN;AAjEM;EACE,WAAA;AAmER","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -243,6 +302,7 @@ body footer .footer-link .github-image {
   \*****************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 /*
@@ -337,6 +397,7 @@ module.exports = function (cssWithMappingToString) {
   \************************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 module.exports = function (item) {
@@ -362,6 +423,7 @@ module.exports = function (item) {
   \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -414,6 +476,7 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
   \****************************************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 var stylesInDOM = [];
@@ -507,6 +570,7 @@ module.exports = function (list, options) {
   \********************************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 var memo = {};
@@ -550,6 +614,7 @@ module.exports = insertBySelector;
   \**********************************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -569,6 +634,7 @@ module.exports = insertStyleElement;
   \**********************************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -588,6 +654,7 @@ module.exports = setAttributesWithoutAttributes;
   \***************************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -658,6 +725,7 @@ module.exports = domAPI;
   \*********************************************************************/
 /***/ ((module) => {
 
+"use strict";
 
 
 /* istanbul ignore next  */
@@ -749,16 +817,18 @@ module.exports = styleTagTransform;
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
+(() => {
+"use strict";
 /*!*************************!*\
   !*** ./src/js/index.js ***!
   \*************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/styles/main.scss */ "./src/assets/styles/main.scss");
+/* harmony import */ var _results__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./results */ "./src/js/results.js");
+/* harmony import */ var _results__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_results__WEBPACK_IMPORTED_MODULE_1__);
 
-// import "../assets/styles/index.scss";
-// import "../assets/styles/goals.scss";
-// import "../assets/styles/calories.scss";
-// import "../assets/styles/results.scss";
+
 
 // const units = document.querySelectorAll("input[name=radio-units]");
 // units.forEach((unit) =>
@@ -782,6 +852,8 @@ __webpack_require__.r(__webpack_exports__);
 // };
 
 // console.log(formToObj(document.querySelector("#calorie-form")));
+})();
+
 /******/ })()
 ;
 //# sourceMappingURL=index.bundle.js.map
