@@ -14,15 +14,15 @@
           <div class="calorie-breakdown">
             <div class="total-calories">
               <h2>//</h2>
-              <h2>Calories: 3300</h2>
+              <h2>Calories: <span id="calorie-target">2000</span></h2>
               <h2>//</h2>
             </div>
 
             <div class="macro-breakdown">
-              <p>Protein: <span>212g</span></p>
-              <p>Carbs: <span>405g</span></p>
-              <p>Fats: <span>87g</span></p>
-              <p>Fiber: <span>38g</span></p>
+              <p>Protein: <span id="protein-target">150g</span></p>
+              <p>Carbs: <span id="carb-target">200g</span></p>
+              <p>Fats: <span id="fat-target">67g</span></p>
+              <p>Fiber: <span id="fiber-target">28g</span></p>
             </div>
           </div>
 
@@ -57,7 +57,6 @@
               type="range"
               name="carb-ratio-slider"
               id="carb-ratio-slider"
-              value="40"
               min="20"
               max="60"
             />
