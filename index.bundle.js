@@ -1,98 +1,6 @@
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
-
-/***/ "./src/js/goals.js":
-/*!*************************!*\
-  !*** ./src/js/goals.js ***!
-  \*************************/
-/***/ (() => {
-
-
-
-/***/ }),
-
-/***/ "./src/js/results.js":
-/*!***************************!*\
-  !*** ./src/js/results.js ***!
-  \***************************/
-/***/ (() => {
-
-var calorieTarget = document.getElementById("calorie-target");
-var proteinTarget = document.getElementById("protein-target");
-var fatTarget = document.getElementById("fat-target");
-var carbTarget = document.getElementById("carb-target");
-var fiberTarget = document.getElementById("fiber-target");
-var proteinRatio = document.getElementById("protein-ratio");
-var carbRatio = document.getElementById("carb-ratio");
-var fatRatio = document.getElementById("fat-ratio");
-var macroSliders = document.querySelectorAll('input[type="range"]');
-var proteinSlider = document.getElementById("carb-ratio-slider");
-var carbSlider = document.getElementById("carb-ratio-slider");
-var fatSlider = document.getElementById("fat-ratio-slider");
-var calorieObj = {
-  calories: 2000,
-  ratio: {
-    protein: 30,
-    fat: 30,
-    carbs: 40
-  },
-  macro: {
-    protein: 150,
-    fat: 67,
-    carbs: 200,
-    fiber: 28
-  }
-};
-
-// Macro Range Slider Event Listener
-macroSliders.forEach(function (slider) {
-  slider.oninput = function (e) {
-    return updateMacroInfo(e);
-  };
-});
-
-// Updates Macro Info
-var updateMacroInfo = function updateMacroInfo(e) {
-  if (e.target.name == "protein-ratio-slider") {
-    calorieObj.ratio.protein = e.target.value;
-    calorieObj.ratio.carbs = 100 - calorieObj.ratio.protein - calorieObj.ratio.fat;
-    updateTargets();
-    loadTargets();
-  } else if (e.target.name == "fat-ratio-slider") {
-    calorieObj.ratio.fat = e.target.value;
-    calorieObj.ratio.carbs = 100 - calorieObj.ratio.protein - calorieObj.ratio.fat;
-    updateTargets();
-    loadTargets();
-  } else if (e.target.name == "carb-ratio-slider") {
-    calorieObj.ratio.carbs = e.target.value;
-    calorieObj.ratio.fat = 100 - calorieObj.ratio.protein - calorieObj.ratio.carbs;
-    updateTargets();
-    loadTargets();
-  }
-};
-
-// Update Protein Target
-var updateTargets = function updateTargets() {
-  calorieObj.macro.protein = Math.trunc(calorieObj.calories * (calorieObj.ratio.protein * 0.01) / 4);
-  calorieObj.macro.fat = Math.trunc(calorieObj.calories * (calorieObj.ratio.fat * 0.01) / 9);
-  calorieObj.macro.carbs = Math.trunc(calorieObj.calories * (calorieObj.ratio.carbs * 0.01) / 4);
-};
-var loadTargets = function loadTargets() {
-  proteinTarget.innerText = "".concat(calorieObj.macro.protein, "g");
-  fatTarget.innerText = "".concat(calorieObj.macro.fat, "g");
-  carbTarget.innerText = "".concat(calorieObj.macro.carbs, "g");
-  calorieTarget.innerText = calorieObj.calories;
-  proteinRatio.innerText = "".concat(calorieObj.ratio.protein, "%");
-  fatRatio.innerText = "".concat(calorieObj.ratio.fat, "%");
-  carbRatio.innerText = "".concat(calorieObj.ratio.carbs, "%");
-  proteinSlider.value = calorieObj.ratio.protein;
-  fatSlider.value = calorieObj.ratio.fat;
-  carbSlider.value = calorieObj.ratio.carbs;
-};
-
-// loadTargets();
-
-/***/ }),
 
 /***/ "./src/js/utils/obj.js":
 /*!*****************************!*\
@@ -100,7 +8,6 @@ var loadTargets = function loadTargets() {
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   profileOBJ: () => (/* binding */ profileOBJ)
@@ -144,7 +51,6 @@ var profileOBJ = {
   \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   heightConversion: () => (/* binding */ heightConversion),
@@ -169,7 +75,6 @@ var weightConversion = function weightConversion(weight) {
   \******************************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -418,7 +323,6 @@ body footer .footer-link .github-image {
   \*****************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 /*
@@ -513,7 +417,6 @@ module.exports = function (cssWithMappingToString) {
   \************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 module.exports = function (item) {
@@ -539,7 +442,6 @@ module.exports = function (item) {
   \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -592,7 +494,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
   \****************************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 var stylesInDOM = [];
@@ -686,7 +587,6 @@ module.exports = function (list, options) {
   \********************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 var memo = {};
@@ -730,7 +630,6 @@ module.exports = insertBySelector;
   \**********************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 /* istanbul ignore next  */
@@ -750,7 +649,6 @@ module.exports = insertStyleElement;
   \**********************************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-"use strict";
 
 
 /* istanbul ignore next  */
@@ -770,7 +668,6 @@ module.exports = setAttributesWithoutAttributes;
   \***************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 /* istanbul ignore next  */
@@ -841,7 +738,6 @@ module.exports = domAPI;
   \*********************************************************************/
 /***/ ((module) => {
 
-"use strict";
 
 
 /* istanbul ignore next  */
@@ -933,52 +829,42 @@ module.exports = styleTagTransform;
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
-(() => {
-"use strict";
 /*!*************************!*\
   !*** ./src/js/index.js ***!
   \*************************/
 __webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   updateProfileInfo: () => (/* binding */ updateProfileInfo)
+/* harmony export */ });
 /* harmony import */ var _assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/styles/main.scss */ "./src/assets/styles/main.scss");
-/* harmony import */ var _goals__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./goals */ "./src/js/goals.js");
-/* harmony import */ var _goals__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_goals__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _results__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./results */ "./src/js/results.js");
-/* harmony import */ var _results__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_results__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _utils_obj__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/obj */ "./src/js/utils/obj.js");
-/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/utils */ "./src/js/utils/utils.js");
+/* harmony import */ var _utils_obj__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/obj */ "./src/js/utils/obj.js");
+/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/utils */ "./src/js/utils/utils.js");
 
 
-
-
-// import { handleInfoButtonClick } from "./utils/events";
 
 var formToOBJ = function formToOBJ(form) {
   return Object.fromEntries(new FormData(form));
 };
 var updateProfileInfo = function updateProfileInfo() {
-  var profileDATA = _utils_obj__WEBPACK_IMPORTED_MODULE_3__.profileOBJ.info;
+  var profileDATA = _utils_obj__WEBPACK_IMPORTED_MODULE_1__.profileOBJ.info;
   var formDATA = formToOBJ(document.getElementById("info-form"));
   profileDATA.name = formDATA.name;
   profileDATA.email = formDATA.email;
   profileDATA.gender = formDATA.gender;
   profileDATA.age = formDATA.age;
-  profileDATA.height = (0,_utils_utils__WEBPACK_IMPORTED_MODULE_4__.heightConversion)(formDATA.feet, formDATA.inches);
-  profileDATA.weight = (0,_utils_utils__WEBPACK_IMPORTED_MODULE_4__.weightConversion)(formDATA.weight);
+  profileDATA.height = (0,_utils_utils__WEBPACK_IMPORTED_MODULE_2__.heightConversion)(formDATA.feet, formDATA.inches);
+  profileDATA.weight = (0,_utils_utils__WEBPACK_IMPORTED_MODULE_2__.weightConversion)(formDATA.weight);
   profileDATA.activity = formDATA.activity;
   console.log(profileDATA);
 };
-var infoSubmit = document.getElementById("info-btn");
-infoSubmit.addEventListener("click", function () {
-  updateProfileInfo();
-  location.href = "./goals.html";
-  infoSubmit.style.visibility = "hidden";
-});
-// if (location.href = "./index.html") {
-//   console.log("test");
-
-// }
-})();
+var handleInfoButtonClick = function handleInfoButtonClick() {
+  var infoSubmit = document.getElementById("info-btn");
+  infoSubmit.addEventListener("click", function () {
+    updateProfileInfo();
+    location.href = "./goals.html";
+  });
+};
+handleInfoButtonClick();
 
 /******/ })()
 ;

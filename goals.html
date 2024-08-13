@@ -21,11 +21,11 @@
           </div>
           <!-- Target Weight -->
           <div class="input-target">
-            <label for="weight-goal">What is your target weight?</label>
+            <label for="weight">What is your target weight?</label>
             <div class="info-container">
               <input
                 type="number"
-                name="weight-goal"
+                name="weight"
                 id="weight-goal"
                 placeholder="0"
               />
@@ -34,8 +34,8 @@
           </div>
           <!-- Preferred Diet -->
           <div class="preferred-diet">
-            <label for="preferred-diet">What is your preferred diet?</label>
-            <select name="preferred-diet" id="preferred-diet">
+            <label for="diet">What is your preferred diet?</label>
+            <select name="diet" id="preferred-diet">
               <option value="low-fat">Low Fat/High Carb</option>
               <option value="balanced" selected>Balanced</option>
               <option value="low-carb">Low-Carb/High Fat</option>
@@ -43,8 +43,8 @@
           </div>
           <!-- Preferred Protein -->
           <div class="preferred-protein">
-            <label for="preferred-protein">Preferred protein intake?</label>
-            <select name="preferred-protein" id="preferred-protein">
+            <label for="protein">Preferred protein intake?</label>
+            <select name="protein" id="preferred-protein">
               <option value="low">Low</option>
               <option value="moderate" selected>Moderate</option>
               <option value="high">High</option>
@@ -57,7 +57,6 @@
               type="button"
               value="Calculate"
               id="goal-btn"
-              onclick="window.location.href = './calories.html'"
             />
             <input class="secondary-btn" type="button" value="Start Over" />
           </div>
@@ -76,3 +75,4 @@
 </footer>
   </body>
 </html>
+<!-- onclick="window.location.href = './calories.html'" -->
