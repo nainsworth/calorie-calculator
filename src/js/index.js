@@ -1,42 +1,10 @@
 import "../assets/styles/main.scss";
 
-import "./results";
-import { heightConversion, weightConversion } from "./utils";
+import { profileOBJ } from "./utils/obj";
+import { handleInfoButtonClick } from "./utils/events";
+import { heightConversion, weightConversion } from "./utils/utils";
 
-const profileOBJ = {
-  info: {
-    name: "",
-    email: "",
-    gender: "",
-    age: 0,
-    height: 0,
-    weight: 0,
-    activity: 0,
-  },
-  goals: {
-    goal: "",
-    weight: 0,
-    diet: "",
-    protein: "",
-  },
-  calories: 0,
-  ratio: {
-    protein: 0,
-    fat: 0,
-    carbs: 0,
-  },
-  macro: {
-    protein: 0,
-    fat: 0,
-    carbs: 0,
-    fiber: 0,
-  },
-};
-
-const infoSubmit = document.getElementById("info-btn");
 const formToOBJ = (form) => Object.fromEntries(new FormData(form));
-
-infoSubmit.addEventListener("click", () => updateProfileInfo());
 
 const updateProfileInfo = () => {
   const profileDATA = profileOBJ.info;
@@ -49,4 +17,10 @@ const updateProfileInfo = () => {
   profileDATA.height = heightConversion(formDATA.feet, formDATA.inches);
   profileDATA.weight = weightConversion(formDATA.weight);
   profileDATA.activity = formDATA.activity;
+
+  console.log(profileDATA);
 };
+
+handleInfoButtonClick();
+
+export { updateProfileInfo };

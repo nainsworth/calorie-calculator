@@ -30,6 +30,9 @@ module.exports = {
   mode: "development",
   entry: {
     index: "./src/js/index.js",
+    goals: "./src/js/goals.js",
+    calories: "./src/js/calories.js",
+    results: "./src/js/results.js",
   },
   output: {
     path: path.resolve(__dirname, "dist/"),
@@ -75,21 +78,25 @@ module.exports = {
       title: "Calorie Calculator",
       filename: "index.html",
       template: "src/views/index.html",
+      chunks: ["index"],
     }),
     new HtmlWebpackPlugin({
       title: "Goals",
       filename: "goals.html",
       template: "src/views/goals.html",
+      chunks: ["goals"],
     }),
     new HtmlWebpackPlugin({
       title: "Calories Options",
       filename: "calories.html",
       template: "src/views/calories.html",
+      chunks: ["calories"],
     }),
     new HtmlWebpackPlugin({
       title: "Results",
       filename: "results.html",
       template: "src/views/results.html",
+      chunks: ["results"],
     }),
     // new BundleAnalyzerPlugin(),
   ],

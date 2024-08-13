@@ -1,3 +1,5 @@
+import "../assets/styles/main.scss";
+
 const calorieTarget = document.getElementById("calorie-target");
 const proteinTarget = document.getElementById("protein-target");
 const fatTarget = document.getElementById("fat-target");
@@ -61,7 +63,9 @@ const updateMacroInfo = (e) => {
 
 // Update Protein Target
 const updateTargets = () => {
-  calorieObj.macro.protein = Math.trunc((calorieObj.calories * (calorieObj.ratio.protein * 0.01)) / 4);
+  calorieObj.macro.protein = Math.trunc(
+    (calorieObj.calories * (calorieObj.ratio.protein * 0.01)) / 4
+  );
   calorieObj.macro.fat = Math.trunc(
     (calorieObj.calories * (calorieObj.ratio.fat * 0.01)) / 9
   );
@@ -86,4 +90,3 @@ const loadTargets = () => {
 };
 
 // loadTargets();
-
