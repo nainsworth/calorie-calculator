@@ -32,11 +32,6 @@
               <span class="input-span">lbs</span>
             </div>
           </div>
-          <!-- Rate -->
-          <!-- <div class="input-rate">
-    <label for="rate">What is your target goal rate?</label>
-    <input type="range" name="rate" id="rate" />
-  </div> -->
           <!-- Preferred Diet -->
           <div class="preferred-diet">
             <label for="preferred-diet">What is your preferred diet?</label>
@@ -48,7 +43,7 @@
           </div>
           <!-- Preferred Protein -->
           <div class="preferred-protein">
-            <label for="preferred-protein">What is your preferred diet?</label>
+            <label for="preferred-protein">Preferred protein intake?</label>
             <select name="preferred-protein" id="preferred-protein">
               <option value="low">Low</option>
               <option value="moderate" selected>Moderate</option>
@@ -56,12 +51,16 @@
               <option value="extra-high">Extra High</option>
             </select>
           </div>
-          <input
-            type="button"
-            value="Calculate"
-            id="goal-btn"
-            onclick="window.location.href = './calories.html'"
-          />
+          <div class="btn-container">
+            <input
+              class="primary-btn"
+              type="button"
+              value="Calculate"
+              id="goal-btn"
+              onclick="window.location.href = './calories.html'"
+            />
+            <input class="secondary-btn" type="button" value="Start Over" />
+          </div>
         </form>
       </div>
     </main>
