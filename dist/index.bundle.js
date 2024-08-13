@@ -79,7 +79,33 @@ var loadTargets = function loadTargets() {
   fatSlider.value = calorieObj.ratio.fat;
   carbSlider.value = calorieObj.ratio.carbs;
 };
-loadTargets();
+
+// loadTargets();
+
+/***/ }),
+
+/***/ "./src/js/utils.js":
+/*!*************************!*\
+  !*** ./src/js/utils.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   heightConversion: () => (/* binding */ heightConversion),
+/* harmony export */   weightConversion: () => (/* binding */ weightConversion)
+/* harmony export */ });
+// Height to CM
+var heightConversion = function heightConversion(feet, inches) {
+  return (feet * 30.48 + inches * 2.54).toFixed(2);
+};
+
+// Weight to KG
+var weightConversion = function weightConversion(weight) {
+  return (weight * 0.45359237).toFixed(2);
+};
+
 
 /***/ }),
 
@@ -284,6 +310,7 @@ body main .card form input::-webkit-inner-spin-button {
 body main .card form .btn-container {
   border: none;
   padding: 16px 0 0 0;
+  grid-column: -1/1;
 }
 body main .card form .btn-container input[type=button] {
   border-radius: 8px;
@@ -324,7 +351,7 @@ body footer .footer-link {
 }
 body footer .footer-link .github-image {
   width: 24px;
-}`, "",{"version":3,"sources":["webpack://./src/assets/styles/_variables.scss","webpack://./src/assets/styles/_index.scss","webpack://./src/assets/styles/main.scss","webpack://./src/assets/styles/_goals.scss","webpack://./src/assets/styles/_calories.scss","webpack://./src/assets/styles/_results.scss"],"names":[],"mappings":"AAEA,mBAAA;AAOA,eAAA;ACTA;EACE,iBAAA;EACA,QAAA;ACKF;ADHE;EACE,WAAA;ACKJ;;ADFA;EACE,iBAAA;EACA,QAAA;ACKF;ADHE;EACE,WAAA;ACKJ;;ADCI;EACE,WAAA;ACEN;;ADGA;EACE,iBAAA;EACA,sBAAA;ACAF;ADEE;EACE,sBAAA;EACA,YAAA;EACA,eAAA;ACAJ;ADEI;EACE,uBAAA;EACA,gBAAA;EACA,qBDjCY;ECkCZ,iBAAA;EACA,sBAAA;EACA,SAAA;EACA,mBAAA;ACAN;ADEM;EACE,WAAA;ACAR;ADGM;EACE,eAAA;ACDR;ADKI;EACE,YAAA;ACHN;;ACjDE;EACE,iBAAA;ADoDJ;;AFpDA,mBAAA;AAOA,eAAA;AINE;EACE,sBAAA;EACA,SAAA;EACA,kBAAA;AFwDJ;AEtDI;EACE,gBJGW;EIFX,iBAAA;AFwDN;AEtDM;EACE,cJVQ;EIWR,qCAAA;EACA,iBAAA;AFwDR;;AGrEE;EACE,gBLSa;AE+DjB;AGrEE;EACE,sBAAA;EACA,kBAAA;EACA,MAAA;AHuEJ;AGrEI;EACE,uBAAA;EACA,YAAA;AHuEN;AGpEI;EACE,YAAA;EACA,SAAA;AHsEN;AGlEE;EACE,sBAAA;EACA,aAAA;AHoEJ;;AAtFA,kBAAA;AACA;;;EAGE,SAAA;EACA,UAAA;EACA,sBAAA;EACA,qBFHa;AE4Ff;;AAtFA,oBAAA;AACA;EACE,YAAA;EACA,WAAA;AAyFF;;AAtFA;EACE,yBFlBiB;EEmBjB,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,iBAAA;EACA,qCFdU;AEuGZ;AAvFE;EACE,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,OAAA;AAyFJ;AAvFI;EACE,sBFhCE;EEiCF,kBAAA;EACA,aAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,SAAA;EACA,YAAA;AAyFN;AAnFM;EACE,aAAA;EACA,4DAAA;EACA,SAAA;AAqFR;AAnFQ;EACE,sBAAA;EACA,aAAA;EACA,8BAAA;EACA,kBAAA;EACA,aAAA;EACA,QAAA;AAqFV;AAlFQ;EACE,YAAA;AAoFV;AAjFQ;;EAEE,aAAA;AAmFV;AAhFQ;EACE,YAAA;EACA,UAAA;EACA,mBAAA;AAkFV;AAhFU;EACE,WAAA;EACA,eAAA;AAkFZ;AA9EQ;EACE,YAAA;EACA,qCFzEE;EE0EF,eAAA;AAgFV;AA7EQ;EACE,qBFzFM;EE0FN,qCF/EE;AE8JZ;AA3EQ;;EAEE,wBAAA;EACA,SAAA;AA6EV;AA1EQ;EACE,YAAA;EACA,mBAAA;AA4EV;AA1EU;EACE,kBAAA;EAEA,qCFhGA;EEiGA,aAAA;EACA,yBAAA;EACA,gBFrGK;AEgLjB;AAxEU;EACE,yBFlHI;EEmHJ,WFhHJ;EEiHI,OAAA;AA0EZ;AAvEU;EACE,sBFrHJ;EEsHI,cFzHI;EE0HJ,OAAA;AAyEZ;AAtEU;;EAEE,eAAA;EACA,yDAAA;AAwEZ;AAjEE;EACE,YAAA;EACA,WAAA;EACA,gBAAA;AAmEJ;AAjEI;EACE,qBAAA;EACA,cF7IY;EE8IZ,gBFrIM;EEsIN,aAAA;EACA,2BAAA;EACA,uBAAA;EACA,mBAAA;EACA,QAAA;AAmEN;AAjEM;EACE,WAAA;AAmER","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/assets/styles/_variables.scss","webpack://./src/assets/styles/_index.scss","webpack://./src/assets/styles/main.scss","webpack://./src/assets/styles/_goals.scss","webpack://./src/assets/styles/_calories.scss","webpack://./src/assets/styles/_results.scss"],"names":[],"mappings":"AAEA,mBAAA;AAOA,eAAA;ACTA;EACE,iBAAA;EACA,QAAA;ACKF;ADHE;EACE,WAAA;ACKJ;;ADFA;EACE,iBAAA;EACA,QAAA;ACKF;ADHE;EACE,WAAA;ACKJ;;ADCI;EACE,WAAA;ACEN;;ADGA;EACE,iBAAA;EACA,sBAAA;ACAF;ADEE;EACE,sBAAA;EACA,YAAA;EACA,eAAA;ACAJ;ADEI;EACE,uBAAA;EACA,gBAAA;EACA,qBDjCY;ECkCZ,iBAAA;EACA,sBAAA;EACA,SAAA;EACA,mBAAA;ACAN;ADEM;EACE,WAAA;ACAR;ADGM;EACE,eAAA;ACDR;ADKI;EACE,YAAA;ACHN;;ACjDE;EACE,iBAAA;ADoDJ;;AFpDA,mBAAA;AAOA,eAAA;AINE;EACE,sBAAA;EACA,SAAA;EACA,kBAAA;AFwDJ;AEtDI;EACE,gBJGW;EIFX,iBAAA;AFwDN;AEtDM;EACE,cJVQ;EIWR,qCAAA;EACA,iBAAA;AFwDR;;AGrEE;EACE,gBLSa;AE+DjB;AGrEE;EACE,sBAAA;EACA,kBAAA;EACA,MAAA;AHuEJ;AGrEI;EACE,uBAAA;EACA,YAAA;AHuEN;AGpEI;EACE,YAAA;EACA,SAAA;AHsEN;AGlEE;EACE,sBAAA;EACA,aAAA;AHoEJ;;AAtFA,kBAAA;AACA;;;EAGE,SAAA;EACA,UAAA;EACA,sBAAA;EACA,qBFHa;AE4Ff;;AAtFA,oBAAA;AACA;EACE,YAAA;EACA,WAAA;AAyFF;;AAtFA;EACE,yBFlBiB;EEmBjB,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,iBAAA;EACA,qCFdU;AEuGZ;AAvFE;EACE,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,OAAA;AAyFJ;AAvFI;EACE,sBFhCE;EEiCF,kBAAA;EACA,aAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,SAAA;EACA,YAAA;AAyFN;AAnFM;EACE,aAAA;EACA,4DAAA;EACA,SAAA;AAqFR;AAnFQ;EACE,sBAAA;EACA,aAAA;EACA,8BAAA;EACA,kBAAA;EACA,aAAA;EACA,QAAA;AAqFV;AAlFQ;EACE,YAAA;AAoFV;AAjFQ;;EAEE,aAAA;AAmFV;AAhFQ;EACE,YAAA;EACA,UAAA;EACA,mBAAA;AAkFV;AAhFU;EACE,WAAA;EACA,eAAA;AAkFZ;AA9EQ;EACE,YAAA;EACA,qCFzEE;EE0EF,eAAA;AAgFV;AA7EQ;EACE,qBFzFM;EE0FN,qCF/EE;AE8JZ;AA3EQ;;EAEE,wBAAA;EACA,SAAA;AA6EV;AA1EQ;EACE,YAAA;EACA,mBAAA;EACA,iBAAA;AA4EV;AA1EU;EACE,kBAAA;EAEA,qCFjGA;EEkGA,aAAA;EACA,yBAAA;EACA,gBFtGK;AEiLjB;AAxEU;EACE,yBFnHI;EEoHJ,WFjHJ;EEkHI,OAAA;AA0EZ;AAvEU;EACE,sBFtHJ;EEuHI,cF1HI;EE2HJ,OAAA;AAyEZ;AAtEU;;EAEE,eAAA;EACA,yDAAA;AAwEZ;AAjEE;EACE,YAAA;EACA,WAAA;EACA,gBAAA;AAmEJ;AAjEI;EACE,qBAAA;EACA,cF9IY;EE+IZ,gBFtIM;EEuIN,aAAA;EACA,2BAAA;EACA,uBAAA;EACA,mBAAA;EACA,QAAA;AAmEN;AAjEM;EACE,WAAA;AAmER","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -862,31 +889,57 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/styles/main.scss */ "./src/assets/styles/main.scss");
 /* harmony import */ var _results__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./results */ "./src/js/results.js");
 /* harmony import */ var _results__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_results__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils */ "./src/js/utils.js");
 
 
 
-// const units = document.querySelectorAll("input[name=radio-units]");
-// units.forEach((unit) =>
-//   unit.addEventListener("change", function () {
-//     checkUnit();
-//   })
-// );
-
-// const checkUnit = () => {
-//   if (imperial.checked) {
-//     document.querySelector(".imperial-form").hidden = false;
-//     document.querySelector(".metric-form").hidden = true;
-//   } else if (metric.checked) {
-//     document.querySelector(".imperial-form").hidden = true;
-//     document.querySelector(".metric-form").hidden = false;
-//   }
-// };
-
-// const formToObj = (form) => {
-//   Object.fromEntries(new FormData(form));
-// };
-
-// console.log(formToObj(document.querySelector("#calorie-form")));
+var profileOBJ = {
+  info: {
+    name: "",
+    email: "",
+    gender: "",
+    age: 0,
+    height: 0,
+    weight: 0,
+    activity: 0
+  },
+  goals: {
+    goal: "",
+    weight: 0,
+    diet: "",
+    protein: ""
+  },
+  calories: 0,
+  ratio: {
+    protein: 0,
+    fat: 0,
+    carbs: 0
+  },
+  macro: {
+    protein: 0,
+    fat: 0,
+    carbs: 0,
+    fiber: 0
+  }
+};
+var infoSubmit = document.getElementById("info-btn");
+var formToOBJ = function formToOBJ(form) {
+  return Object.fromEntries(new FormData(form));
+};
+infoSubmit.addEventListener("click", function () {
+  return updateProfileInfo();
+});
+var updateProfileInfo = function updateProfileInfo() {
+  var profileDATA = profileOBJ.info;
+  var formDATA = formToOBJ(document.getElementById("info-form"));
+  profileDATA.name = formDATA.name;
+  profileDATA.email = formDATA.email;
+  profileDATA.gender = formDATA.gender;
+  profileDATA.age = formDATA.age;
+  profileDATA.height = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.heightConversion)(formDATA.feet, formDATA.inches);
+  profileDATA.weight = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.weightConversion)(formDATA.weight);
+  profileDATA.activity = formDATA.activity;
+};
 })();
 
 /******/ })()

@@ -9,7 +9,7 @@
     <main>
       <div class="card">
         <h1>About You</h1>
-        <form method="post" id="imperial-form">
+        <form method="post" id="info-form">
           <div class="input-name">
             <!-- Name -->
             <label for="name">Name:</label>
@@ -46,9 +46,11 @@
           <div class="input-height">
             <label for="height">Height:</label>
             <div class="info-container">
-              <input type="number" name="height" id="feet" placeholder="0" />
+              <label for="feet" hidden></label>
+              <input type="number" name="feet" id="feet" placeholder="0" />
               <p class="input-span">ft</p>
-              <input type="number" name="height" id="inches" placeholder="0" />
+              <label for="inches" hidden></label>
+              <input type="number" name="inches" id="inches" placeholder="0" />
               <p class="input-span">in</p>
             </div>
           </div>
@@ -130,8 +132,7 @@
               class="primary-btn"
               type="button"
               value="Calculate"
-              id="imperial-btn"
-              onclick="window.location.href = './goals.html'"
+              id="info-btn"
             />
             <input class="secondary-btn" type="button" value="Start Over" />
           </div>
@@ -141,3 +142,5 @@
     <footer><%= require('html-loader!./partials/footer.html').default%></footer>
   </body>
 </html>
+
+              <!-- onclick="window.location.href = './goals.html'" -->

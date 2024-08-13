@@ -85,4 +85,5 @@ const loadTargets = () => {
   carbSlider.value = calorieObj.ratio.carbs;
 };
 
-loadTargets();
+// loadTargets();
+

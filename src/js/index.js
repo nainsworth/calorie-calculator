@@ -1,26 +1,52 @@
 import "../assets/styles/main.scss";
 
 import "./results";
+import { heightConversion, weightConversion } from "./utils";
 
-// const units = document.querySelectorAll("input[name=radio-units]");
-// units.forEach((unit) =>
-//   unit.addEventListener("change", function () {
-//     checkUnit();
-//   })
-// );
+const profileOBJ = {
+  info: {
+    name: "",
+    email: "",
+    gender: "",
+    age: 0,
+    height: 0,
+    weight: 0,
+    activity: 0,
+  },
+  goals: {
+    goal: "",
+    weight: 0,
+    diet: "",
+    protein: "",
+  },
+  calories: 0,
+  ratio: {
+    protein: 0,
+    fat: 0,
+    carbs: 0,
+  },
+  macro: {
+    protein: 0,
+    fat: 0,
+    carbs: 0,
+    fiber: 0,
+  },
+};
 
-// const checkUnit = () => {
-//   if (imperial.checked) {
-//     document.querySelector(".imperial-form").hidden = false;
-//     document.querySelector(".metric-form").hidden = true;
-//   } else if (metric.checked) {
-//     document.querySelector(".imperial-form").hidden = true;
-//     document.querySelector(".metric-form").hidden = false;
-//   }
-// };
+const infoSubmit = document.getElementById("info-btn");
+const formToOBJ = (form) => Object.fromEntries(new FormData(form));
 
-// const formToObj = (form) => {
-//   Object.fromEntries(new FormData(form));
-// };
+infoSubmit.addEventListener("click", () => updateProfileInfo());
 
-// console.log(formToObj(document.querySelector("#calorie-form")));
+const updateProfileInfo = () => {
+  const profileDATA = profileOBJ.info;
+  const formDATA = formToOBJ(document.getElementById("info-form"));
+
+  profileDATA.name = formDATA.name;
+  profileDATA.email = formDATA.email;
+  profileDATA.gender = formDATA.gender;
+  profileDATA.age = formDATA.age;
+  profileDATA.height = heightConversion(formDATA.feet, formDATA.inches);
+  profileDATA.weight = weightConversion(formDATA.weight);
+  profileDATA.activity = formDATA.activity;
+};
