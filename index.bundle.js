@@ -1,6 +1,16 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/js/goals.js":
+/*!*************************!*\
+  !*** ./src/js/goals.js ***!
+  \*************************/
+/***/ (() => {
+
+
+
+/***/ }),
+
 /***/ "./src/js/results.js":
 /*!***************************!*\
   !*** ./src/js/results.js ***!
@@ -84,10 +94,54 @@ var loadTargets = function loadTargets() {
 
 /***/ }),
 
-/***/ "./src/js/utils.js":
-/*!*************************!*\
-  !*** ./src/js/utils.js ***!
-  \*************************/
+/***/ "./src/js/utils/obj.js":
+/*!*****************************!*\
+  !*** ./src/js/utils/obj.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   profileOBJ: () => (/* binding */ profileOBJ)
+/* harmony export */ });
+var profileOBJ = {
+  info: {
+    name: "",
+    email: "",
+    gender: "",
+    age: 0,
+    height: 0,
+    weight: 0,
+    activity: 0
+  },
+  goals: {
+    goal: "",
+    weight: 0,
+    diet: "",
+    protein: ""
+  },
+  calories: 0,
+  ratio: {
+    protein: 0,
+    fat: 0,
+    carbs: 0
+  },
+  macro: {
+    protein: 0,
+    fat: 0,
+    carbs: 0,
+    fiber: 0
+  }
+};
+
+
+/***/ }),
+
+/***/ "./src/js/utils/utils.js":
+/*!*******************************!*\
+  !*** ./src/js/utils/utils.js ***!
+  \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -887,59 +941,43 @@ var __webpack_exports__ = {};
   \*************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/styles/main.scss */ "./src/assets/styles/main.scss");
-/* harmony import */ var _results__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./results */ "./src/js/results.js");
-/* harmony import */ var _results__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_results__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils */ "./src/js/utils.js");
+/* harmony import */ var _goals__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./goals */ "./src/js/goals.js");
+/* harmony import */ var _goals__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_goals__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _results__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./results */ "./src/js/results.js");
+/* harmony import */ var _results__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_results__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _utils_obj__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/obj */ "./src/js/utils/obj.js");
+/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/utils */ "./src/js/utils/utils.js");
 
 
 
-var profileOBJ = {
-  info: {
-    name: "",
-    email: "",
-    gender: "",
-    age: 0,
-    height: 0,
-    weight: 0,
-    activity: 0
-  },
-  goals: {
-    goal: "",
-    weight: 0,
-    diet: "",
-    protein: ""
-  },
-  calories: 0,
-  ratio: {
-    protein: 0,
-    fat: 0,
-    carbs: 0
-  },
-  macro: {
-    protein: 0,
-    fat: 0,
-    carbs: 0,
-    fiber: 0
-  }
-};
-var infoSubmit = document.getElementById("info-btn");
+
+// import { handleInfoButtonClick } from "./utils/events";
+
 var formToOBJ = function formToOBJ(form) {
   return Object.fromEntries(new FormData(form));
 };
-infoSubmit.addEventListener("click", function () {
-  return updateProfileInfo();
-});
 var updateProfileInfo = function updateProfileInfo() {
-  var profileDATA = profileOBJ.info;
+  var profileDATA = _utils_obj__WEBPACK_IMPORTED_MODULE_3__.profileOBJ.info;
   var formDATA = formToOBJ(document.getElementById("info-form"));
   profileDATA.name = formDATA.name;
   profileDATA.email = formDATA.email;
   profileDATA.gender = formDATA.gender;
   profileDATA.age = formDATA.age;
-  profileDATA.height = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.heightConversion)(formDATA.feet, formDATA.inches);
-  profileDATA.weight = (0,_utils__WEBPACK_IMPORTED_MODULE_2__.weightConversion)(formDATA.weight);
+  profileDATA.height = (0,_utils_utils__WEBPACK_IMPORTED_MODULE_4__.heightConversion)(formDATA.feet, formDATA.inches);
+  profileDATA.weight = (0,_utils_utils__WEBPACK_IMPORTED_MODULE_4__.weightConversion)(formDATA.weight);
   profileDATA.activity = formDATA.activity;
+  console.log(profileDATA);
 };
+var infoSubmit = document.getElementById("info-btn");
+infoSubmit.addEventListener("click", function () {
+  updateProfileInfo();
+  location.href = "./goals.html";
+  infoSubmit.style.visibility = "hidden";
+});
+// if (location.href = "./index.html") {
+//   console.log("test");
+
+// }
 })();
 
 /******/ })()
