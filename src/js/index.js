@@ -1,7 +1,7 @@
 import "../assets/styles/main.scss";
 
 import { profileOBJ } from "./utils/obj";
-import { heightConversion, weightConversion } from "./utils/utils";
+import { heightConversion, weightConversion, storeData, retrieveData } from "./utils/utils";
 
 const formToOBJ = (form) => Object.fromEntries(new FormData(form));
 
@@ -17,7 +17,8 @@ const updateProfileInfo = () => {
   profileDATA.weight = weightConversion(formDATA.weight);
   profileDATA.activity = formDATA.activity;
 
-  console.log(profileDATA);
+  console.log(profileOBJ);
+  storeData("info", profileDATA);
 };
 
 const handleInfoButtonClick = () => {
@@ -25,6 +26,8 @@ const handleInfoButtonClick = () => {
 
   infoSubmit.addEventListener("click", () => {
     updateProfileInfo();
+    // console.log(retrieveData("info"));
+    
     location.href = "./goals.html";
   });
 };

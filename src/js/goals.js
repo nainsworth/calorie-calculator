@@ -1,6 +1,7 @@
 import "../assets/styles/main.scss";
 
 import { profileOBJ } from "./utils/obj";
+import { storeData, retrieveData } from "./utils/utils";
 
 const formToOBJ = (form) => Object.fromEntries(new FormData(form));
 
@@ -13,7 +14,7 @@ const updateProfileGoals = () => {
   profileDATA.diet = formDATA.diet;
   profileDATA.protein = formDATA.protein;
 
-  console.log(profileOBJ);
+  storeData("goals", profileDATA)
 };
 
 const handleGoalButtonClick = () => {
@@ -21,7 +22,11 @@ const handleGoalButtonClick = () => {
 
   infoSubmit.addEventListener("click", () => {
     updateProfileGoals();
-    // location.href = "./calories.html";
+    location.href = "./calories.html";
+    // console.log(retrieveData("info"), retrieveData("goals"));
+    // console.log(profileOBJ);
+    
+    
   });
 };
 

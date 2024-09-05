@@ -8,4 +8,12 @@ const weightConversion = (weight) => {
   return (weight * 0.45359237).toFixed(2);
 };
 
-export { heightConversion, weightConversion };
+const storeData = (key, data) => {
+  sessionStorage.setItem(key, JSON.stringify(data));
+};
+
+const retrieveData = (key) => {
+  return JSON.parse(sessionStorage.getItem(key));
+};
+
+export { heightConversion, weightConversion, storeData, retrieveData };
