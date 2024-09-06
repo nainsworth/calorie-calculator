@@ -54,7 +54,10 @@ var profileOBJ = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   heightConversion: () => (/* binding */ heightConversion),
-/* harmony export */   weightConversion: () => (/* binding */ weightConversion)
+/* harmony export */   kgConversion: () => (/* binding */ kgConversion),
+/* harmony export */   lbConversion: () => (/* binding */ lbConversion),
+/* harmony export */   retrieveData: () => (/* binding */ retrieveData),
+/* harmony export */   storeData: () => (/* binding */ storeData)
 /* harmony export */ });
 // Height to CM
 var heightConversion = function heightConversion(feet, inches) {
@@ -62,8 +65,18 @@ var heightConversion = function heightConversion(feet, inches) {
 };
 
 // Weight to KG
-var weightConversion = function weightConversion(weight) {
+var kgConversion = function kgConversion(weight) {
   return (weight * 0.45359237).toFixed(2);
+};
+// Weight to lb
+var lbConversion = function lbConversion(weight) {
+  return (weight / 0.45359237).toFixed(2);
+};
+var storeData = function storeData(key, data) {
+  sessionStorage.setItem(key, JSON.stringify(data));
+};
+var retrieveData = function retrieveData(key) {
+  return JSON.parse(sessionStorage.getItem(key));
 };
 
 
@@ -833,9 +846,6 @@ var __webpack_exports__ = {};
   !*** ./src/js/index.js ***!
   \*************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   updateProfileInfo: () => (/* binding */ updateProfileInfo)
-/* harmony export */ });
 /* harmony import */ var _assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/styles/main.scss */ "./src/assets/styles/main.scss");
 /* harmony import */ var _utils_obj__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/obj */ "./src/js/utils/obj.js");
 /* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/utils */ "./src/js/utils/utils.js");
@@ -853,9 +863,10 @@ var updateProfileInfo = function updateProfileInfo() {
   profileDATA.gender = formDATA.gender;
   profileDATA.age = formDATA.age;
   profileDATA.height = (0,_utils_utils__WEBPACK_IMPORTED_MODULE_2__.heightConversion)(formDATA.feet, formDATA.inches);
-  profileDATA.weight = (0,_utils_utils__WEBPACK_IMPORTED_MODULE_2__.weightConversion)(formDATA.weight);
+  profileDATA.weight = (0,_utils_utils__WEBPACK_IMPORTED_MODULE_2__.kgConversion)(formDATA.weight);
   profileDATA.activity = formDATA.activity;
-  console.log(profileDATA);
+  console.log(_utils_obj__WEBPACK_IMPORTED_MODULE_1__.profileOBJ);
+  (0,_utils_utils__WEBPACK_IMPORTED_MODULE_2__.storeData)("info", profileDATA);
 };
 var handleInfoButtonClick = function handleInfoButtonClick() {
   var infoSubmit = document.getElementById("info-btn");
@@ -865,7 +876,6 @@ var handleInfoButtonClick = function handleInfoButtonClick() {
   });
 };
 handleInfoButtonClick();
-
 /******/ })()
 ;
 //# sourceMappingURL=index.bundle.js.map

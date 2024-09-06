@@ -2,6 +2,141 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/js/utils/equations.js":
+/*!***********************************!*\
+  !*** ./src/js/utils/equations.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   mifflinEquation: () => (/* binding */ mifflinEquation)
+/* harmony export */ });
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils */ "./src/js/utils/utils.js");
+
+
+// Harris-Benedict Equation
+// const hbEquation = (sex, weight, feet, inches, age) => {
+//   const bmr = 0;
+//   if (sex === "Male") {
+//     return (
+//       88.362 +
+//       13.397 * weightConversion(weight) +
+//       4.799 * heightConversion(feet, inches) -
+//       5.677 * age
+//     );
+//   } else {
+//     return (
+//       447.593 +
+//       9.247 * weightConversion(weight) +
+//       3.098 * heightConversion(feet, inches) -
+//       4.33 * age
+//     );
+//   }
+
+// };
+
+// Mifflin-St.Jeor Equation
+var mifflinEquation = function mifflinEquation(sex, weight, height, age) {
+  if (sex === "male") {
+    return 9.99 * weight + 6.25 * height - 4.92 * age + 5;
+  } else {
+    return 9.99 * weight + 6.25 * height - 4.92 * age - 161;
+  }
+};
+
+// Katch-McArdle Equation
+// const kmEquation = (weight, bodyFat) => {
+//   const fatMass = weightConversion(weight) * bodyFat;
+//   const leanMass = weightConversion(weight) - fatMass;
+
+//   return 370 + (21.6 + leanMass);
+// };
+
+
+
+/***/ }),
+
+/***/ "./src/js/utils/obj.js":
+/*!*****************************!*\
+  !*** ./src/js/utils/obj.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   profileOBJ: () => (/* binding */ profileOBJ)
+/* harmony export */ });
+var profileOBJ = {
+  info: {
+    name: "",
+    email: "",
+    gender: "",
+    age: 0,
+    height: 0,
+    weight: 0,
+    activity: 0
+  },
+  goals: {
+    goal: "",
+    weight: 0,
+    diet: "",
+    protein: ""
+  },
+  calories: 0,
+  ratio: {
+    protein: 0,
+    fat: 0,
+    carbs: 0
+  },
+  macro: {
+    protein: 0,
+    fat: 0,
+    carbs: 0,
+    fiber: 0
+  }
+};
+
+
+/***/ }),
+
+/***/ "./src/js/utils/utils.js":
+/*!*******************************!*\
+  !*** ./src/js/utils/utils.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   heightConversion: () => (/* binding */ heightConversion),
+/* harmony export */   kgConversion: () => (/* binding */ kgConversion),
+/* harmony export */   lbConversion: () => (/* binding */ lbConversion),
+/* harmony export */   retrieveData: () => (/* binding */ retrieveData),
+/* harmony export */   storeData: () => (/* binding */ storeData)
+/* harmony export */ });
+// Height to CM
+var heightConversion = function heightConversion(feet, inches) {
+  return (feet * 30.48 + inches * 2.54).toFixed(2);
+};
+
+// Weight to KG
+var kgConversion = function kgConversion(weight) {
+  return (weight * 0.45359237).toFixed(2);
+};
+// Weight to lb
+var lbConversion = function lbConversion(weight) {
+  return (weight / 0.45359237).toFixed(2);
+};
+var storeData = function storeData(key, data) {
+  sessionStorage.setItem(key, JSON.stringify(data));
+};
+var retrieveData = function retrieveData(key) {
+  return JSON.parse(sessionStorage.getItem(key));
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/styles/main.scss":
 /*!******************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/styles/main.scss ***!
@@ -767,7 +902,93 @@ var __webpack_exports__ = {};
   \****************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/styles/main.scss */ "./src/assets/styles/main.scss");
+/* harmony import */ var _utils_obj__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/obj */ "./src/js/utils/obj.js");
+/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/utils */ "./src/js/utils/utils.js");
+/* harmony import */ var _utils_equations__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/equations */ "./src/js/utils/equations.js");
 
+
+
+
+var infoOBJ = (0,_utils_utils__WEBPACK_IMPORTED_MODULE_2__.retrieveData)("info");
+var weightArray = [];
+var calorieArray = [];
+var formToOBJ = function formToOBJ(form) {
+  return Object.fromEntries(new FormData(form));
+};
+var updateProfileCalories = function updateProfileCalories() {
+  var profileDATA = _utils_obj__WEBPACK_IMPORTED_MODULE_1__.profileOBJ;
+  var formDATA = formToOBJ(document.getElementById("calorie-form"));
+  profileDATA.calories = formDATA.calories;
+  (0,_utils_utils__WEBPACK_IMPORTED_MODULE_2__.storeData)("calories", profileDATA);
+};
+var calculateTDEE = function calculateTDEE() {
+  var bmr = (0,_utils_equations__WEBPACK_IMPORTED_MODULE_3__.mifflinEquation)(infoOBJ.gender, infoOBJ.weight, infoOBJ.height, infoOBJ.age);
+  return bmr * infoOBJ.activity;
+};
+var weightLossGoal = function weightLossGoal(TDEE, weight) {
+  for (var i = 0; i <= 0.01; i += 0.0025) {
+    weightArray.push(weight * i);
+  }
+  weightArray.forEach(function (e) {
+    calorieArray.push(TDEE - e * 500);
+  });
+};
+var weightGainGoal = function weightGainGoal(TDEE, weight) {
+  for (var i = 0; i <= 0.01; i += 0.0025) {
+    weightArray.push(weight * i);
+  }
+  weightArray.reverse().forEach(function (e) {
+    calorieArray.push(TDEE + e * 500);
+  });
+};
+var maintenanceGoal = function maintenanceGoal(TDEE, weight) {
+  for (var i = -0.005; i <= 0.005; i += 0.0025) {
+    weightArray.push(weight * i);
+  }
+  weightArray.reverse().forEach(function (e) {
+    calorieArray.push(TDEE + e * 500);
+  });
+};
+var generateOptions = function generateOptions(TDEE, weight) {
+  var goalsOBJ = (0,_utils_utils__WEBPACK_IMPORTED_MODULE_2__.retrieveData)("goals");
+  if (goalsOBJ.goal === "lose") {
+    weightLossGoal(TDEE, weight);
+  } else if (goalsOBJ.goal === "gain") {
+    weightGainGoal(TDEE, weight);
+  } else {
+    maintenanceGoal(TDEE, weight);
+  }
+  var option1 = document.getElementById("option-1");
+  var label1 = document.getElementById("label-1");
+  option1.value = calorieArray[0].toFixed(0);
+  label1.innerHTML = "".concat(calorieArray[0].toFixed(0), " Calories <span>").concat(weightArray[0].toFixed(2), " lbs/wk</span>");
+  var option2 = document.getElementById("option-2");
+  var label2 = document.getElementById("label-2");
+  option2.value = calorieArray[1].toFixed(0);
+  label2.innerHTML = "".concat(calorieArray[1].toFixed(0), " Calories <span>").concat(weightArray[1].toFixed(2), " lbs/wk</span>");
+  var option3 = document.getElementById("option-3");
+  var label3 = document.getElementById("label-3");
+  option3.value = calorieArray[2].toFixed(0);
+  label3.innerHTML = "".concat(calorieArray[2].toFixed(0), " Calories <span>").concat(weightArray[2].toFixed(2), " lbs/wk</span>");
+  var option4 = document.getElementById("option-4");
+  var label4 = document.getElementById("label-4");
+  option4.value = calorieArray[3].toFixed(0);
+  label4.innerHTML = "".concat(calorieArray[3].toFixed(0), " Calories <span>").concat(weightArray[3].toFixed(2), " lbs/wk</span>");
+  var option5 = document.getElementById("option-5");
+  var label5 = document.getElementById("label-5");
+  option5.value = calorieArray[4].toFixed(0);
+  label5.innerHTML = "".concat(calorieArray[4].toFixed(0), " Calories <span>").concat(weightArray[4].toFixed(2), " lbs/wk</span>");
+};
+var handleGoalButtonClick = function handleGoalButtonClick() {
+  var infoSubmit = document.getElementById("calorie-btn");
+  infoSubmit.addEventListener("click", function () {
+    updateProfileCalories();
+    location.href = "./results.html";
+    console.log((0,_utils_utils__WEBPACK_IMPORTED_MODULE_2__.retrieveData)("calories"));
+  });
+};
+generateOptions(parseInt(calculateTDEE()), (0,_utils_utils__WEBPACK_IMPORTED_MODULE_2__.lbConversion)(infoOBJ.weight));
+handleGoalButtonClick();
 /******/ })()
 ;
 //# sourceMappingURL=calories.bundle.js.map

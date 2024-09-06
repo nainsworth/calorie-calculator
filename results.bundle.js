@@ -2,6 +2,86 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/js/utils/obj.js":
+/*!*****************************!*\
+  !*** ./src/js/utils/obj.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   profileOBJ: () => (/* binding */ profileOBJ)
+/* harmony export */ });
+var profileOBJ = {
+  info: {
+    name: "",
+    email: "",
+    gender: "",
+    age: 0,
+    height: 0,
+    weight: 0,
+    activity: 0
+  },
+  goals: {
+    goal: "",
+    weight: 0,
+    diet: "",
+    protein: ""
+  },
+  calories: 0,
+  ratio: {
+    protein: 0,
+    fat: 0,
+    carbs: 0
+  },
+  macro: {
+    protein: 0,
+    fat: 0,
+    carbs: 0,
+    fiber: 0
+  }
+};
+
+
+/***/ }),
+
+/***/ "./src/js/utils/utils.js":
+/*!*******************************!*\
+  !*** ./src/js/utils/utils.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   heightConversion: () => (/* binding */ heightConversion),
+/* harmony export */   kgConversion: () => (/* binding */ kgConversion),
+/* harmony export */   lbConversion: () => (/* binding */ lbConversion),
+/* harmony export */   retrieveData: () => (/* binding */ retrieveData),
+/* harmony export */   storeData: () => (/* binding */ storeData)
+/* harmony export */ });
+// Height to CM
+var heightConversion = function heightConversion(feet, inches) {
+  return (feet * 30.48 + inches * 2.54).toFixed(2);
+};
+
+// Weight to KG
+var kgConversion = function kgConversion(weight) {
+  return (weight * 0.45359237).toFixed(2);
+};
+// Weight to lb
+var lbConversion = function lbConversion(weight) {
+  return (weight / 0.45359237).toFixed(2);
+};
+var storeData = function storeData(key, data) {
+  sessionStorage.setItem(key, JSON.stringify(data));
+};
+var retrieveData = function retrieveData(key) {
+  return JSON.parse(sessionStorage.getItem(key));
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/styles/main.scss":
 /*!******************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/styles/main.scss ***!
@@ -767,6 +847,10 @@ var __webpack_exports__ = {};
   \***************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/styles/main.scss */ "./src/assets/styles/main.scss");
+/* harmony import */ var _utils_obj__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/obj */ "./src/js/utils/obj.js");
+/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/utils */ "./src/js/utils/utils.js");
+
+
 
 var calorieTarget = document.getElementById("calorie-target");
 var proteinTarget = document.getElementById("protein-target");
@@ -780,8 +864,12 @@ var macroSliders = document.querySelectorAll('input[type="range"]');
 var proteinSlider = document.getElementById("carb-ratio-slider");
 var carbSlider = document.getElementById("carb-ratio-slider");
 var fatSlider = document.getElementById("fat-ratio-slider");
+var updateMacros = function updateMacros() {
+  var goals = (0,_utils_utils__WEBPACK_IMPORTED_MODULE_2__.retrieveData)("goals");
+  var calories = (0,_utils_utils__WEBPACK_IMPORTED_MODULE_2__.retrieveData)("calories").calories;
+};
 var calorieObj = {
-  calories: 2000,
+  calories: calories,
   ratio: {
     protein: 30,
     fat: 30,
@@ -840,8 +928,8 @@ var loadTargets = function loadTargets() {
   fatSlider.value = calorieObj.ratio.fat;
   carbSlider.value = calorieObj.ratio.carbs;
 };
-
-// loadTargets();
+loadTargets();
+console.log((0,_utils_utils__WEBPACK_IMPORTED_MODULE_2__.retrieveData)("info"), (0,_utils_utils__WEBPACK_IMPORTED_MODULE_2__.retrieveData)("goals"), (0,_utils_utils__WEBPACK_IMPORTED_MODULE_2__.retrieveData)("calories"));
 /******/ })()
 ;
 //# sourceMappingURL=results.bundle.js.map

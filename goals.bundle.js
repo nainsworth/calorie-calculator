@@ -45,6 +45,43 @@ var profileOBJ = {
 
 /***/ }),
 
+/***/ "./src/js/utils/utils.js":
+/*!*******************************!*\
+  !*** ./src/js/utils/utils.js ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   heightConversion: () => (/* binding */ heightConversion),
+/* harmony export */   kgConversion: () => (/* binding */ kgConversion),
+/* harmony export */   lbConversion: () => (/* binding */ lbConversion),
+/* harmony export */   retrieveData: () => (/* binding */ retrieveData),
+/* harmony export */   storeData: () => (/* binding */ storeData)
+/* harmony export */ });
+// Height to CM
+var heightConversion = function heightConversion(feet, inches) {
+  return (feet * 30.48 + inches * 2.54).toFixed(2);
+};
+
+// Weight to KG
+var kgConversion = function kgConversion(weight) {
+  return (weight * 0.45359237).toFixed(2);
+};
+// Weight to lb
+var lbConversion = function lbConversion(weight) {
+  return (weight / 0.45359237).toFixed(2);
+};
+var storeData = function storeData(key, data) {
+  sessionStorage.setItem(key, JSON.stringify(data));
+};
+var retrieveData = function retrieveData(key) {
+  return JSON.parse(sessionStorage.getItem(key));
+};
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/styles/main.scss":
 /*!******************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/assets/styles/main.scss ***!
@@ -809,11 +846,10 @@ var __webpack_exports__ = {};
   !*** ./src/js/goals.js ***!
   \*************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   updateProfileGoals: () => (/* binding */ updateProfileGoals)
-/* harmony export */ });
 /* harmony import */ var _assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/styles/main.scss */ "./src/assets/styles/main.scss");
 /* harmony import */ var _utils_obj__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/obj */ "./src/js/utils/obj.js");
+/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/utils */ "./src/js/utils/utils.js");
+
 
 
 var formToOBJ = function formToOBJ(form) {
@@ -826,17 +862,16 @@ var updateProfileGoals = function updateProfileGoals() {
   profileDATA.weight = formDATA.weight;
   profileDATA.diet = formDATA.diet;
   profileDATA.protein = formDATA.protein;
-  console.log(_utils_obj__WEBPACK_IMPORTED_MODULE_1__.profileOBJ);
+  (0,_utils_utils__WEBPACK_IMPORTED_MODULE_2__.storeData)("goals", profileDATA);
 };
 var handleGoalButtonClick = function handleGoalButtonClick() {
   var infoSubmit = document.getElementById("goal-btn");
   infoSubmit.addEventListener("click", function () {
     updateProfileGoals();
-    // location.href = "./calories.html";
+    location.href = "./calories.html";
   });
 };
 handleGoalButtonClick();
-
 /******/ })()
 ;
 //# sourceMappingURL=goals.bundle.js.map
