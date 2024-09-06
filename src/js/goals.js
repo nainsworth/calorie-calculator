@@ -14,7 +14,7 @@ const updateProfileGoals = () => {
   profileDATA.diet = formDATA.diet;
   profileDATA.protein = formDATA.protein;
 
-  storeData("goals", profileDATA)
+  storeData("goals", profileDATA);
 };
 
 const handleGoalButtonClick = () => {
@@ -23,13 +23,7 @@ const handleGoalButtonClick = () => {
   infoSubmit.addEventListener("click", () => {
     updateProfileGoals();
     location.href = "./calories.html";
-    // console.log(retrieveData("info"), retrieveData("goals"));
-    // console.log(profileOBJ);
-    
-    
   });
 };
 
 handleGoalButtonClick();
-
-export { updateProfileGoals };

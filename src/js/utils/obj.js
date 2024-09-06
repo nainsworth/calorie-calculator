@@ -1,4 +1,4 @@
-const profileOBJ = {
+let profileOBJ = {
   info: {
     name: "",
     email: "",

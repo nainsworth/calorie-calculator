@@ -22,18 +22,18 @@ import { heightConversion, weightConversion } from "./utils";
 // };
 
 // Mifflin-St.Jeor Equation
-const msjEquation = (sex, weight, feet, inches, age) => {
-  if (sex === "Male") {
+const mifflinEquation = (sex, weight, height, age) => {
+  if (sex === "male") {
     return (
-      9.99 * weightConversion(weight) +
-      6.25 * heightConversion(feet, inches) -
+      9.99 * weight +
+      6.25 * height -
       4.92 * age +
       5
     );
   } else {
     return (
-      9.99 * weightConversion(weight) +
-      6.25 * heightConversion(feet, inches) -
+      9.99 * weight +
+      6.25 * height -
       4.92 * age -
       161
     );
@@ -41,11 +41,11 @@ const msjEquation = (sex, weight, feet, inches, age) => {
 };
 
 // Katch-McArdle Equation
-const kmEquation = (weight, bodyFat) => {
-  const fatMass = weightConversion(weight) * bodyFat;
-  const leanMass = weightConversion(weight) - fatMass;
+// const kmEquation = (weight, bodyFat) => {
+//   const fatMass = weightConversion(weight) * bodyFat;
+//   const leanMass = weightConversion(weight) - fatMass;
 
-  return 370 + (21.6 + leanMass);
-};
+//   return 370 + (21.6 + leanMass);
+// };
 
-export { msjEquation, kmEquation };
+export { mifflinEquation };

@@ -4,7 +4,11 @@ const heightConversion = (feet, inches) => {
 };
 
 // Weight to KG
-const weightConversion = (weight) => {
+const kgConversion = (weight) => {
+  return (weight * 0.45359237).toFixed(2);
+};
+// Weight to lb
+const lbConversion = (weight) => {
   return (weight * 0.45359237).toFixed(2);
 };
 
@@ -16,4 +20,10 @@ const retrieveData = (key) => {
   return JSON.parse(sessionStorage.getItem(key));
 };
 
-export { heightConversion, weightConversion, storeData, retrieveData };
+export {
+  heightConversion,
+  kgConversion,
+  lbConversion,
+  storeData,
+  retrieveData,
+};

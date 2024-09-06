@@ -1,4 +1,6 @@
 import "../assets/styles/main.scss";
+import { profileOBJ } from "./utils/obj";
+import { storeData, retrieveData } from "./utils/utils";
 
 const calorieTarget = document.getElementById("calorie-target");
 const proteinTarget = document.getElementById("protein-target");
@@ -15,8 +17,15 @@ const proteinSlider = document.getElementById("carb-ratio-slider");
 const carbSlider = document.getElementById("carb-ratio-slider");
 const fatSlider = document.getElementById("fat-ratio-slider");
 
+const updateMacros = () => {
+  const goals = retrieveData("goals");
+  const calories = retrieveData("calories").calories;
+
+
+};
+
 let calorieObj = {
-  calories: 2000,
+  calories: calories,
   ratio: {
     protein: 30,
     fat: 30,
@@ -89,4 +98,10 @@ const loadTargets = () => {
   carbSlider.value = calorieObj.ratio.carbs;
 };
 
-// loadTargets();
+loadTargets();
+
+console.log(
+  retrieveData("info"),
+  retrieveData("goals"),
+  retrieveData("calories")
+);
