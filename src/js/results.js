@@ -13,16 +13,12 @@ const carbRatio = document.getElementById("carb-ratio");
 const fatRatio = document.getElementById("fat-ratio");
 
 const macroSliders = document.querySelectorAll('input[type="range"]');
-const proteinSlider = document.getElementById("carb-ratio-slider");
+const proteinSlider = document.getElementById("protein-ratio-slider");
 const carbSlider = document.getElementById("carb-ratio-slider");
 const fatSlider = document.getElementById("fat-ratio-slider");
 
-const updateMacros = () => {
-  const goals = retrieveData("goals");
-  const calories = retrieveData("calories").calories;
-
-
-};
+const goals = retrieveData("goals");
+const calories = retrieveData("calories").calories;
 
 let calorieObj = {
   calories: calories,
@@ -32,11 +28,38 @@ let calorieObj = {
     carbs: 40,
   },
   macro: {
-    protein: 150,
-    fat: 67,
-    carbs: 200,
-    fiber: 28,
+    protein: 0,
+    fat: 0,
+    carbs: 0,
+    fiber: 0,
   },
+};
+
+// Set Macro Ratio
+const setMacroRatio = () => {
+  let protein = 0;
+  let fat = 0;
+  let carb = 0;
+
+  if (goals.protein === "low") {
+    protein = 25;
+  } else if (goals.protein === "high") {
+    protein = 35;
+  } else if (goals.protein === "extra-high") {
+    protein = 40;
+  } else { 
+    protein = 30;
+  }
+
+  if (goals.diet === "low-fat") {
+    fat = 25;
+  } else if (goals.diet === "low-carb") {
+    fat = 35;
+  } else {
+    fat = 30;
+  }
+
+  carb = 100 - protein - fat;
 };
 
 // Macro Range Slider Event Listener
@@ -51,21 +74,18 @@ const updateMacroInfo = (e) => {
     calorieObj.ratio.carbs =
       100 - calorieObj.ratio.protein - calorieObj.ratio.fat;
 
-    updateTargets();
     loadTargets();
   } else if (e.target.name == "fat-ratio-slider") {
     calorieObj.ratio.fat = e.target.value;
     calorieObj.ratio.carbs =
       100 - calorieObj.ratio.protein - calorieObj.ratio.fat;
 
-    updateTargets();
     loadTargets();
   } else if (e.target.name == "carb-ratio-slider") {
     calorieObj.ratio.carbs = e.target.value;
     calorieObj.ratio.fat =
       100 - calorieObj.ratio.protein - calorieObj.ratio.carbs;
 
-    updateTargets();
     loadTargets();
   }
 };
@@ -84,6 +104,8 @@ const updateTargets = () => {
 };
 
 const loadTargets = () => {
+  updateTargets();
+
   proteinTarget.innerText = `${calorieObj.macro.protein}g`;
   fatTarget.innerText = `${calorieObj.macro.fat}g`;
   carbTarget.innerText = `${calorieObj.macro.carbs}g`;
@@ -96,6 +118,8 @@ const loadTargets = () => {
   proteinSlider.value = calorieObj.ratio.protein;
   fatSlider.value = calorieObj.ratio.fat;
   carbSlider.value = calorieObj.ratio.carbs;
+
+  console.log(calorieObj);
 };
 
 loadTargets();
