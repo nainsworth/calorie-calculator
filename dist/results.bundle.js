@@ -2,6 +2,589 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./node_modules/@emailjs/browser/es/api/sendPost.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@emailjs/browser/es/api/sendPost.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   sendPost: () => (/* binding */ sendPost)
+/* harmony export */ });
+/* harmony import */ var _models_EmailJSResponseStatus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../models/EmailJSResponseStatus */ "./node_modules/@emailjs/browser/es/models/EmailJSResponseStatus.js");
+/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../store/store */ "./node_modules/@emailjs/browser/es/store/store.js");
+
+
+const sendPost = async (url, data, headers = {}) => {
+    const response = await fetch(_store_store__WEBPACK_IMPORTED_MODULE_1__.store.origin + url, {
+        method: 'POST',
+        headers,
+        body: data,
+    });
+    const message = await response.text();
+    const responseStatus = new _models_EmailJSResponseStatus__WEBPACK_IMPORTED_MODULE_0__.EmailJSResponseStatus(response.status, message);
+    if (response.ok) {
+        return responseStatus;
+    }
+    throw responseStatus;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/@emailjs/browser/es/errors/blockedEmailError/blockedEmailError.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/@emailjs/browser/es/errors/blockedEmailError/blockedEmailError.js ***!
+  \****************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   blockedEmailError: () => (/* binding */ blockedEmailError)
+/* harmony export */ });
+/* harmony import */ var _models_EmailJSResponseStatus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../models/EmailJSResponseStatus */ "./node_modules/@emailjs/browser/es/models/EmailJSResponseStatus.js");
+
+const blockedEmailError = () => {
+    return new _models_EmailJSResponseStatus__WEBPACK_IMPORTED_MODULE_0__.EmailJSResponseStatus(403, 'Forbidden');
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/@emailjs/browser/es/errors/headlessError/headlessError.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/@emailjs/browser/es/errors/headlessError/headlessError.js ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   headlessError: () => (/* binding */ headlessError)
+/* harmony export */ });
+/* harmony import */ var _models_EmailJSResponseStatus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../models/EmailJSResponseStatus */ "./node_modules/@emailjs/browser/es/models/EmailJSResponseStatus.js");
+
+const headlessError = () => {
+    return new _models_EmailJSResponseStatus__WEBPACK_IMPORTED_MODULE_0__.EmailJSResponseStatus(451, 'Unavailable For Headless Browser');
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/@emailjs/browser/es/errors/limitRateError/limitRateError.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/@emailjs/browser/es/errors/limitRateError/limitRateError.js ***!
+  \**********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   limitRateError: () => (/* binding */ limitRateError)
+/* harmony export */ });
+/* harmony import */ var _models_EmailJSResponseStatus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../models/EmailJSResponseStatus */ "./node_modules/@emailjs/browser/es/models/EmailJSResponseStatus.js");
+
+const limitRateError = () => {
+    return new _models_EmailJSResponseStatus__WEBPACK_IMPORTED_MODULE_0__.EmailJSResponseStatus(429, 'Too Many Requests');
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/@emailjs/browser/es/index.js":
+/*!***************************************************!*\
+  !*** ./node_modules/@emailjs/browser/es/index.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   EmailJSResponseStatus: () => (/* reexport safe */ _models_EmailJSResponseStatus__WEBPACK_IMPORTED_MODULE_0__.EmailJSResponseStatus),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   init: () => (/* reexport safe */ _methods_init_init__WEBPACK_IMPORTED_MODULE_1__.init),
+/* harmony export */   send: () => (/* reexport safe */ _methods_send_send__WEBPACK_IMPORTED_MODULE_2__.send),
+/* harmony export */   sendForm: () => (/* reexport safe */ _methods_sendForm_sendForm__WEBPACK_IMPORTED_MODULE_3__.sendForm)
+/* harmony export */ });
+/* harmony import */ var _models_EmailJSResponseStatus__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./models/EmailJSResponseStatus */ "./node_modules/@emailjs/browser/es/models/EmailJSResponseStatus.js");
+/* harmony import */ var _methods_init_init__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./methods/init/init */ "./node_modules/@emailjs/browser/es/methods/init/init.js");
+/* harmony import */ var _methods_send_send__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./methods/send/send */ "./node_modules/@emailjs/browser/es/methods/send/send.js");
+/* harmony import */ var _methods_sendForm_sendForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./methods/sendForm/sendForm */ "./node_modules/@emailjs/browser/es/methods/sendForm/sendForm.js");
+
+
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+    init: _methods_init_init__WEBPACK_IMPORTED_MODULE_1__.init,
+    send: _methods_send_send__WEBPACK_IMPORTED_MODULE_2__.send,
+    sendForm: _methods_sendForm_sendForm__WEBPACK_IMPORTED_MODULE_3__.sendForm,
+    EmailJSResponseStatus: _models_EmailJSResponseStatus__WEBPACK_IMPORTED_MODULE_0__.EmailJSResponseStatus,
+});
+
+
+/***/ }),
+
+/***/ "./node_modules/@emailjs/browser/es/methods/init/init.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@emailjs/browser/es/methods/init/init.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   init: () => (/* binding */ init)
+/* harmony export */ });
+/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../store/store */ "./node_modules/@emailjs/browser/es/store/store.js");
+/* harmony import */ var _utils_buildOptions_buildOptions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../utils/buildOptions/buildOptions */ "./node_modules/@emailjs/browser/es/utils/buildOptions/buildOptions.js");
+
+
+/**
+ * EmailJS global SDK config
+ * @param {object} options - the EmailJS global SDK config options
+ * @param {string} origin - the non-default EmailJS origin
+ */
+const init = (options, origin = 'https://api.emailjs.com') => {
+    if (!options)
+        return;
+    const opts = (0,_utils_buildOptions_buildOptions__WEBPACK_IMPORTED_MODULE_1__.buildOptions)(options);
+    _store_store__WEBPACK_IMPORTED_MODULE_0__.store.publicKey = opts.publicKey;
+    _store_store__WEBPACK_IMPORTED_MODULE_0__.store.blockHeadless = opts.blockHeadless;
+    _store_store__WEBPACK_IMPORTED_MODULE_0__.store.storageProvider = opts.storageProvider;
+    _store_store__WEBPACK_IMPORTED_MODULE_0__.store.blockList = opts.blockList;
+    _store_store__WEBPACK_IMPORTED_MODULE_0__.store.limitRate = opts.limitRate;
+    _store_store__WEBPACK_IMPORTED_MODULE_0__.store.origin = opts.origin || origin;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/@emailjs/browser/es/methods/sendForm/sendForm.js":
+/*!***********************************************************************!*\
+  !*** ./node_modules/@emailjs/browser/es/methods/sendForm/sendForm.js ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   sendForm: () => (/* binding */ sendForm)
+/* harmony export */ });
+/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../store/store */ "./node_modules/@emailjs/browser/es/store/store.js");
+/* harmony import */ var _api_sendPost__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../api/sendPost */ "./node_modules/@emailjs/browser/es/api/sendPost.js");
+/* harmony import */ var _utils_buildOptions_buildOptions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/buildOptions/buildOptions */ "./node_modules/@emailjs/browser/es/utils/buildOptions/buildOptions.js");
+/* harmony import */ var _utils_validateForm_validateForm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/validateForm/validateForm */ "./node_modules/@emailjs/browser/es/utils/validateForm/validateForm.js");
+/* harmony import */ var _utils_validateParams_validateParams__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils/validateParams/validateParams */ "./node_modules/@emailjs/browser/es/utils/validateParams/validateParams.js");
+/* harmony import */ var _utils_isHeadless_isHeadless__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/isHeadless/isHeadless */ "./node_modules/@emailjs/browser/es/utils/isHeadless/isHeadless.js");
+/* harmony import */ var _errors_headlessError_headlessError__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../errors/headlessError/headlessError */ "./node_modules/@emailjs/browser/es/errors/headlessError/headlessError.js");
+/* harmony import */ var _utils_isBlockedValueInParams_isBlockedValueInParams__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../utils/isBlockedValueInParams/isBlockedValueInParams */ "./node_modules/@emailjs/browser/es/utils/isBlockedValueInParams/isBlockedValueInParams.js");
+/* harmony import */ var _errors_blockedEmailError_blockedEmailError__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../errors/blockedEmailError/blockedEmailError */ "./node_modules/@emailjs/browser/es/errors/blockedEmailError/blockedEmailError.js");
+/* harmony import */ var _utils_isLimitRateHit_isLimitRateHit__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../utils/isLimitRateHit/isLimitRateHit */ "./node_modules/@emailjs/browser/es/utils/isLimitRateHit/isLimitRateHit.js");
+/* harmony import */ var _errors_limitRateError_limitRateError__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../errors/limitRateError/limitRateError */ "./node_modules/@emailjs/browser/es/errors/limitRateError/limitRateError.js");
+
+
+
+
+
+
+
+
+
+
+
+const findHTMLForm = (form) => {
+    return typeof form === 'string' ? document.querySelector(form) : form;
+};
+/**
+ * Send a form the specific EmailJS service
+ * @param {string} serviceID - the EmailJS service ID
+ * @param {string} templateID - the EmailJS template ID
+ * @param {string | HTMLFormElement} form - the form element or selector
+ * @param {object} options - the EmailJS SDK config options
+ * @returns {Promise<EmailJSResponseStatus>}
+ */
+const sendForm = async (serviceID, templateID, form, options) => {
+    const opts = (0,_utils_buildOptions_buildOptions__WEBPACK_IMPORTED_MODULE_2__.buildOptions)(options);
+    const publicKey = opts.publicKey || _store_store__WEBPACK_IMPORTED_MODULE_0__.store.publicKey;
+    const blockHeadless = opts.blockHeadless || _store_store__WEBPACK_IMPORTED_MODULE_0__.store.blockHeadless;
+    const storageProvider = _store_store__WEBPACK_IMPORTED_MODULE_0__.store.storageProvider || opts.storageProvider;
+    const blockList = { ..._store_store__WEBPACK_IMPORTED_MODULE_0__.store.blockList, ...opts.blockList };
+    const limitRate = { ..._store_store__WEBPACK_IMPORTED_MODULE_0__.store.limitRate, ...opts.limitRate };
+    if (blockHeadless && (0,_utils_isHeadless_isHeadless__WEBPACK_IMPORTED_MODULE_5__.isHeadless)(navigator)) {
+        return Promise.reject((0,_errors_headlessError_headlessError__WEBPACK_IMPORTED_MODULE_6__.headlessError)());
+    }
+    const currentForm = findHTMLForm(form);
+    (0,_utils_validateParams_validateParams__WEBPACK_IMPORTED_MODULE_4__.validateParams)(publicKey, serviceID, templateID);
+    (0,_utils_validateForm_validateForm__WEBPACK_IMPORTED_MODULE_3__.validateForm)(currentForm);
+    const formData = new FormData(currentForm);
+    if ((0,_utils_isBlockedValueInParams_isBlockedValueInParams__WEBPACK_IMPORTED_MODULE_7__.isBlockedValueInParams)(blockList, formData)) {
+        return Promise.reject((0,_errors_blockedEmailError_blockedEmailError__WEBPACK_IMPORTED_MODULE_8__.blockedEmailError)());
+    }
+    if (await (0,_utils_isLimitRateHit_isLimitRateHit__WEBPACK_IMPORTED_MODULE_9__.isLimitRateHit)(location.pathname, limitRate, storageProvider)) {
+        return Promise.reject((0,_errors_limitRateError_limitRateError__WEBPACK_IMPORTED_MODULE_10__.limitRateError)());
+    }
+    formData.append('lib_version', '4.4.1');
+    formData.append('service_id', serviceID);
+    formData.append('template_id', templateID);
+    formData.append('user_id', publicKey);
+    return (0,_api_sendPost__WEBPACK_IMPORTED_MODULE_1__.sendPost)('/api/v1.0/email/send-form', formData);
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/@emailjs/browser/es/methods/send/send.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@emailjs/browser/es/methods/send/send.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   send: () => (/* binding */ send)
+/* harmony export */ });
+/* harmony import */ var _store_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../store/store */ "./node_modules/@emailjs/browser/es/store/store.js");
+/* harmony import */ var _api_sendPost__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../api/sendPost */ "./node_modules/@emailjs/browser/es/api/sendPost.js");
+/* harmony import */ var _utils_buildOptions_buildOptions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/buildOptions/buildOptions */ "./node_modules/@emailjs/browser/es/utils/buildOptions/buildOptions.js");
+/* harmony import */ var _utils_validateParams_validateParams__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/validateParams/validateParams */ "./node_modules/@emailjs/browser/es/utils/validateParams/validateParams.js");
+/* harmony import */ var _utils_validateTemplateParams_validateTemplateParams__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils/validateTemplateParams/validateTemplateParams */ "./node_modules/@emailjs/browser/es/utils/validateTemplateParams/validateTemplateParams.js");
+/* harmony import */ var _utils_isHeadless_isHeadless__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/isHeadless/isHeadless */ "./node_modules/@emailjs/browser/es/utils/isHeadless/isHeadless.js");
+/* harmony import */ var _errors_headlessError_headlessError__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../errors/headlessError/headlessError */ "./node_modules/@emailjs/browser/es/errors/headlessError/headlessError.js");
+/* harmony import */ var _utils_isBlockedValueInParams_isBlockedValueInParams__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../utils/isBlockedValueInParams/isBlockedValueInParams */ "./node_modules/@emailjs/browser/es/utils/isBlockedValueInParams/isBlockedValueInParams.js");
+/* harmony import */ var _errors_blockedEmailError_blockedEmailError__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../errors/blockedEmailError/blockedEmailError */ "./node_modules/@emailjs/browser/es/errors/blockedEmailError/blockedEmailError.js");
+/* harmony import */ var _utils_isLimitRateHit_isLimitRateHit__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../utils/isLimitRateHit/isLimitRateHit */ "./node_modules/@emailjs/browser/es/utils/isLimitRateHit/isLimitRateHit.js");
+/* harmony import */ var _errors_limitRateError_limitRateError__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../errors/limitRateError/limitRateError */ "./node_modules/@emailjs/browser/es/errors/limitRateError/limitRateError.js");
+
+
+
+
+
+
+
+
+
+
+
+/**
+ * Send a template to the specific EmailJS service
+ * @param {string} serviceID - the EmailJS service ID
+ * @param {string} templateID - the EmailJS template ID
+ * @param {object} templateParams - the template params, what will be set to the EmailJS template
+ * @param {object} options - the EmailJS SDK config options
+ * @returns {Promise<EmailJSResponseStatus>}
+ */
+const send = async (serviceID, templateID, templateParams, options) => {
+    const opts = (0,_utils_buildOptions_buildOptions__WEBPACK_IMPORTED_MODULE_2__.buildOptions)(options);
+    const publicKey = opts.publicKey || _store_store__WEBPACK_IMPORTED_MODULE_0__.store.publicKey;
+    const blockHeadless = opts.blockHeadless || _store_store__WEBPACK_IMPORTED_MODULE_0__.store.blockHeadless;
+    const storageProvider = opts.storageProvider || _store_store__WEBPACK_IMPORTED_MODULE_0__.store.storageProvider;
+    const blockList = { ..._store_store__WEBPACK_IMPORTED_MODULE_0__.store.blockList, ...opts.blockList };
+    const limitRate = { ..._store_store__WEBPACK_IMPORTED_MODULE_0__.store.limitRate, ...opts.limitRate };
+    if (blockHeadless && (0,_utils_isHeadless_isHeadless__WEBPACK_IMPORTED_MODULE_5__.isHeadless)(navigator)) {
+        return Promise.reject((0,_errors_headlessError_headlessError__WEBPACK_IMPORTED_MODULE_6__.headlessError)());
+    }
+    (0,_utils_validateParams_validateParams__WEBPACK_IMPORTED_MODULE_3__.validateParams)(publicKey, serviceID, templateID);
+    (0,_utils_validateTemplateParams_validateTemplateParams__WEBPACK_IMPORTED_MODULE_4__.validateTemplateParams)(templateParams);
+    if (templateParams && (0,_utils_isBlockedValueInParams_isBlockedValueInParams__WEBPACK_IMPORTED_MODULE_7__.isBlockedValueInParams)(blockList, templateParams)) {
+        return Promise.reject((0,_errors_blockedEmailError_blockedEmailError__WEBPACK_IMPORTED_MODULE_8__.blockedEmailError)());
+    }
+    if (await (0,_utils_isLimitRateHit_isLimitRateHit__WEBPACK_IMPORTED_MODULE_9__.isLimitRateHit)(location.pathname, limitRate, storageProvider)) {
+        return Promise.reject((0,_errors_limitRateError_limitRateError__WEBPACK_IMPORTED_MODULE_10__.limitRateError)());
+    }
+    const params = {
+        lib_version: '4.4.1',
+        user_id: publicKey,
+        service_id: serviceID,
+        template_id: templateID,
+        template_params: templateParams,
+    };
+    return (0,_api_sendPost__WEBPACK_IMPORTED_MODULE_1__.sendPost)('/api/v1.0/email/send', JSON.stringify(params), {
+        'Content-type': 'application/json',
+    });
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/@emailjs/browser/es/models/EmailJSResponseStatus.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/@emailjs/browser/es/models/EmailJSResponseStatus.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   EmailJSResponseStatus: () => (/* binding */ EmailJSResponseStatus)
+/* harmony export */ });
+class EmailJSResponseStatus {
+    constructor(_status = 0, _text = 'Network Error') {
+        this.status = _status;
+        this.text = _text;
+    }
+}
+
+
+/***/ }),
+
+/***/ "./node_modules/@emailjs/browser/es/store/store.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/@emailjs/browser/es/store/store.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   store: () => (/* binding */ store)
+/* harmony export */ });
+/* harmony import */ var _utils_createWebStorage_createWebStorage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../utils/createWebStorage/createWebStorage */ "./node_modules/@emailjs/browser/es/utils/createWebStorage/createWebStorage.js");
+
+const store = {
+    origin: 'https://api.emailjs.com',
+    blockHeadless: false,
+    storageProvider: (0,_utils_createWebStorage_createWebStorage__WEBPACK_IMPORTED_MODULE_0__.createWebStorage)(),
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/@emailjs/browser/es/utils/buildOptions/buildOptions.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@emailjs/browser/es/utils/buildOptions/buildOptions.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   buildOptions: () => (/* binding */ buildOptions)
+/* harmony export */ });
+const buildOptions = (options) => {
+    if (!options)
+        return {};
+    // support compatibility with SDK v3
+    if (typeof options === 'string') {
+        return {
+            publicKey: options,
+        };
+    }
+    // eslint-disable-next-line @typescript-eslint/no-base-to-string
+    if (options.toString() === '[object Object]') {
+        return options;
+    }
+    return {};
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/@emailjs/browser/es/utils/createWebStorage/createWebStorage.js":
+/*!*************************************************************************************!*\
+  !*** ./node_modules/@emailjs/browser/es/utils/createWebStorage/createWebStorage.js ***!
+  \*************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   createWebStorage: () => (/* binding */ createWebStorage)
+/* harmony export */ });
+const createWebStorage = () => {
+    if (typeof localStorage === 'undefined')
+        return;
+    return {
+        get: (key) => Promise.resolve(localStorage.getItem(key)),
+        set: (key, value) => Promise.resolve(localStorage.setItem(key, value)),
+        remove: (key) => Promise.resolve(localStorage.removeItem(key)),
+    };
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/@emailjs/browser/es/utils/isBlockedValueInParams/isBlockedValueInParams.js":
+/*!*************************************************************************************************!*\
+  !*** ./node_modules/@emailjs/browser/es/utils/isBlockedValueInParams/isBlockedValueInParams.js ***!
+  \*************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   isBlockedValueInParams: () => (/* binding */ isBlockedValueInParams)
+/* harmony export */ });
+/* harmony import */ var _validateBlockListParams_validateBlockListParams__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../validateBlockListParams/validateBlockListParams */ "./node_modules/@emailjs/browser/es/utils/validateBlockListParams/validateBlockListParams.js");
+
+const isBlockListDisabled = (options) => {
+    return !options.list?.length || !options.watchVariable;
+};
+const getValue = (data, name) => {
+    return data instanceof FormData ? data.get(name) : data[name];
+};
+const isBlockedValueInParams = (options, params) => {
+    if (isBlockListDisabled(options))
+        return false;
+    (0,_validateBlockListParams_validateBlockListParams__WEBPACK_IMPORTED_MODULE_0__.validateBlockListParams)(options.list, options.watchVariable);
+    const value = getValue(params, options.watchVariable);
+    if (typeof value !== 'string')
+        return false;
+    return options.list.includes(value);
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/@emailjs/browser/es/utils/isHeadless/isHeadless.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@emailjs/browser/es/utils/isHeadless/isHeadless.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   isHeadless: () => (/* binding */ isHeadless)
+/* harmony export */ });
+const isHeadless = (navigator) => {
+    return navigator.webdriver || !navigator.languages || navigator.languages.length === 0;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/@emailjs/browser/es/utils/isLimitRateHit/isLimitRateHit.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@emailjs/browser/es/utils/isLimitRateHit/isLimitRateHit.js ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   isLimitRateHit: () => (/* binding */ isLimitRateHit)
+/* harmony export */ });
+/* harmony import */ var _validateLimitRateParams_validateLimitRateParams__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../validateLimitRateParams/validateLimitRateParams */ "./node_modules/@emailjs/browser/es/utils/validateLimitRateParams/validateLimitRateParams.js");
+
+const getLeftTime = async (id, throttle, storage) => {
+    const lastTime = Number((await storage.get(id)) || 0);
+    return throttle - Date.now() + lastTime;
+};
+const isLimitRateHit = async (defaultID, options, storage) => {
+    if (!options.throttle || !storage) {
+        return false;
+    }
+    (0,_validateLimitRateParams_validateLimitRateParams__WEBPACK_IMPORTED_MODULE_0__.validateLimitRateParams)(options.throttle, options.id);
+    const id = options.id || defaultID;
+    const leftTime = await getLeftTime(id, options.throttle, storage);
+    if (leftTime > 0) {
+        return true;
+    }
+    await storage.set(id, Date.now().toString());
+    return false;
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/@emailjs/browser/es/utils/validateBlockListParams/validateBlockListParams.js":
+/*!***************************************************************************************************!*\
+  !*** ./node_modules/@emailjs/browser/es/utils/validateBlockListParams/validateBlockListParams.js ***!
+  \***************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   validateBlockListParams: () => (/* binding */ validateBlockListParams)
+/* harmony export */ });
+const validateBlockListParams = (list, watchVariable) => {
+    if (!Array.isArray(list)) {
+        throw 'The BlockList list has to be an array';
+    }
+    if (typeof watchVariable !== 'string') {
+        throw 'The BlockList watchVariable has to be a string';
+    }
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/@emailjs/browser/es/utils/validateForm/validateForm.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@emailjs/browser/es/utils/validateForm/validateForm.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   validateForm: () => (/* binding */ validateForm)
+/* harmony export */ });
+const validateForm = (form) => {
+    if (!form || form.nodeName !== 'FORM') {
+        throw 'The 3rd parameter is expected to be the HTML form element or the style selector of the form';
+    }
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/@emailjs/browser/es/utils/validateLimitRateParams/validateLimitRateParams.js":
+/*!***************************************************************************************************!*\
+  !*** ./node_modules/@emailjs/browser/es/utils/validateLimitRateParams/validateLimitRateParams.js ***!
+  \***************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   validateLimitRateParams: () => (/* binding */ validateLimitRateParams)
+/* harmony export */ });
+const validateLimitRateParams = (throttle, id) => {
+    if (typeof throttle !== 'number' || throttle < 0) {
+        throw 'The LimitRate throttle has to be a positive number';
+    }
+    if (id && typeof id !== 'string') {
+        throw 'The LimitRate ID has to be a non-empty string';
+    }
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/@emailjs/browser/es/utils/validateParams/validateParams.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@emailjs/browser/es/utils/validateParams/validateParams.js ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   validateParams: () => (/* binding */ validateParams)
+/* harmony export */ });
+const validateParams = (publicKey, serviceID, templateID) => {
+    if (!publicKey || typeof publicKey !== 'string') {
+        throw 'The public key is required. Visit https://dashboard.emailjs.com/admin/account';
+    }
+    if (!serviceID || typeof serviceID !== 'string') {
+        throw 'The service ID is required. Visit https://dashboard.emailjs.com/admin';
+    }
+    if (!templateID || typeof templateID !== 'string') {
+        throw 'The template ID is required. Visit https://dashboard.emailjs.com/admin/templates';
+    }
+};
+
+
+/***/ }),
+
+/***/ "./node_modules/@emailjs/browser/es/utils/validateTemplateParams/validateTemplateParams.js":
+/*!*************************************************************************************************!*\
+  !*** ./node_modules/@emailjs/browser/es/utils/validateTemplateParams/validateTemplateParams.js ***!
+  \*************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   validateTemplateParams: () => (/* binding */ validateTemplateParams)
+/* harmony export */ });
+const validateTemplateParams = (templateParams) => {
+    // eslint-disable-next-line @typescript-eslint/no-base-to-string
+    if (templateParams && templateParams.toString() !== '[object Object]') {
+        throw 'The template params have to be the object. Visit https://www.emailjs.com/docs/sdk/send/';
+    }
+};
+
+
+/***/ }),
+
 /***/ "./src/js/utils/obj.js":
 /*!*****************************!*\
   !*** ./src/js/utils/obj.js ***!
@@ -842,6 +1425,8 @@ module.exports = styleTagTransform;
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
 /*!***************************!*\
   !*** ./src/js/results.js ***!
   \***************************/
@@ -849,6 +1434,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_styles_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/styles/main.scss */ "./src/assets/styles/main.scss");
 /* harmony import */ var _utils_obj__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/obj */ "./src/js/utils/obj.js");
 /* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/utils */ "./src/js/utils/utils.js");
+/* harmony import */ var _emailjs_browser__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @emailjs/browser */ "./node_modules/@emailjs/browser/es/index.js");
+
 
 
 
@@ -861,25 +1448,54 @@ var proteinRatio = document.getElementById("protein-ratio");
 var carbRatio = document.getElementById("carb-ratio");
 var fatRatio = document.getElementById("fat-ratio");
 var macroSliders = document.querySelectorAll('input[type="range"]');
-var proteinSlider = document.getElementById("carb-ratio-slider");
+var proteinSlider = document.getElementById("protein-ratio-slider");
 var carbSlider = document.getElementById("carb-ratio-slider");
 var fatSlider = document.getElementById("fat-ratio-slider");
-var updateMacros = function updateMacros() {
-  var goals = (0,_utils_utils__WEBPACK_IMPORTED_MODULE_2__.retrieveData)("goals");
-  var calories = (0,_utils_utils__WEBPACK_IMPORTED_MODULE_2__.retrieveData)("calories").calories;
+var info = (0,_utils_utils__WEBPACK_IMPORTED_MODULE_2__.retrieveData)("info");
+var goals = (0,_utils_utils__WEBPACK_IMPORTED_MODULE_2__.retrieveData)("goals");
+var calories = (0,_utils_utils__WEBPACK_IMPORTED_MODULE_2__.retrieveData)("calories").calories;
+
+// Set Macro Ratio
+var setMacroRatio = function setMacroRatio() {
+  var proteinRatio = 0;
+  var fatRatio = 0;
+  var carbRatio = 0;
+  if (goals.protein === "low") {
+    proteinRatio = 25;
+  } else if (goals.protein === "high") {
+    proteinRatio = 35;
+  } else if (goals.protein === "extra-high") {
+    proteinRatio = 40;
+  } else {
+    proteinRatio = 30;
+  }
+  if (goals.diet === "low-fat") {
+    fatRatio = 25;
+  } else if (goals.diet === "low-carb") {
+    fatRatio = 35;
+  } else {
+    fatRatio = 30;
+  }
+  carbRatio = 100 - proteinRatio - fatRatio;
+  return {
+    protein: proteinRatio,
+    fat: fatRatio,
+    carbs: carbRatio
+  };
 };
+var macro = setMacroRatio();
 var calorieObj = {
   calories: calories,
   ratio: {
-    protein: 30,
-    fat: 30,
-    carbs: 40
+    protein: macro.protein,
+    fat: macro.fat,
+    carbs: macro.carbs
   },
   macro: {
-    protein: 150,
-    fat: 67,
-    carbs: 200,
-    fiber: 28
+    protein: 0,
+    fat: 0,
+    carbs: 0,
+    fiber: (calories / 1000 * 14).toFixed(0)
   }
 };
 
@@ -895,19 +1511,14 @@ var updateMacroInfo = function updateMacroInfo(e) {
   if (e.target.name == "protein-ratio-slider") {
     calorieObj.ratio.protein = e.target.value;
     calorieObj.ratio.carbs = 100 - calorieObj.ratio.protein - calorieObj.ratio.fat;
-    updateTargets();
-    loadTargets();
   } else if (e.target.name == "fat-ratio-slider") {
     calorieObj.ratio.fat = e.target.value;
     calorieObj.ratio.carbs = 100 - calorieObj.ratio.protein - calorieObj.ratio.fat;
-    updateTargets();
-    loadTargets();
   } else if (e.target.name == "carb-ratio-slider") {
     calorieObj.ratio.carbs = e.target.value;
     calorieObj.ratio.fat = 100 - calorieObj.ratio.protein - calorieObj.ratio.carbs;
-    updateTargets();
-    loadTargets();
   }
+  loadTargets();
 };
 
 // Update Protein Target
@@ -917,9 +1528,11 @@ var updateTargets = function updateTargets() {
   calorieObj.macro.carbs = Math.trunc(calorieObj.calories * (calorieObj.ratio.carbs * 0.01) / 4);
 };
 var loadTargets = function loadTargets() {
+  updateTargets();
   proteinTarget.innerText = "".concat(calorieObj.macro.protein, "g");
   fatTarget.innerText = "".concat(calorieObj.macro.fat, "g");
   carbTarget.innerText = "".concat(calorieObj.macro.carbs, "g");
+  fiberTarget.innerText = "".concat(calorieObj.macro.fiber, "g");
   calorieTarget.innerText = calorieObj.calories;
   proteinRatio.innerText = "".concat(calorieObj.ratio.protein, "%");
   fatRatio.innerText = "".concat(calorieObj.ratio.fat, "%");
@@ -927,9 +1540,38 @@ var loadTargets = function loadTargets() {
   proteinSlider.value = calorieObj.ratio.protein;
   fatSlider.value = calorieObj.ratio.fat;
   carbSlider.value = calorieObj.ratio.carbs;
+  console.log(calorieObj);
+};
+var sendEmail = function sendEmail() {
+  var templateParams = {
+    email: info.email,
+    name: info.name,
+    subject: "Here is your Macros!",
+    calories: "".concat(calorieObj.calories, " cals"),
+    protein: "".concat(calorieObj.macro.protein, " g"),
+    fat: "".concat(calorieObj.macro.fat, " g"),
+    carbs: "".concat(calorieObj.macro.carbs, " g"),
+    fiber: "".concat(calorieObj.macro.fiber, " g")
+  };
+  _emailjs_browser__WEBPACK_IMPORTED_MODULE_3__["default"].send("service_ygq3w1t", "template_xkks148", templateParams, {
+    publicKey: "Gm5AsgsgNtUwToYiH"
+  }).then(function (response) {
+    console.log("SUCCESS!", response.status, response.text);
+  }, function (err) {
+    console.log("FAILED...", err);
+  });
+};
+var handleGoalButtonClick = function handleGoalButtonClick() {
+  var infoSubmit = document.getElementById("send-btn");
+  infoSubmit.addEventListener("click", function () {
+    sendEmail();
+  });
 };
 loadTargets();
+handleGoalButtonClick();
 console.log((0,_utils_utils__WEBPACK_IMPORTED_MODULE_2__.retrieveData)("info"), (0,_utils_utils__WEBPACK_IMPORTED_MODULE_2__.retrieveData)("goals"), (0,_utils_utils__WEBPACK_IMPORTED_MODULE_2__.retrieveData)("calories"));
+})();
+
 /******/ })()
 ;
 //# sourceMappingURL=results.bundle.js.map

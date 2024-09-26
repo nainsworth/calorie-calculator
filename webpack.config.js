@@ -11,6 +11,9 @@
 // optional
 // npm i axios
 
+// for email
+// npm i -D @emailjs/browser
+
 // For posting live to git hub
 // Step 1
 // Remove the dist directory from the project’s .gitignore file.

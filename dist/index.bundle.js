@@ -842,6 +842,8 @@ module.exports = styleTagTransform;
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+(() => {
 /*!*************************!*\
   !*** ./src/js/index.js ***!
   \*************************/
@@ -876,6 +878,8 @@ var handleInfoButtonClick = function handleInfoButtonClick() {
   });
 };
 handleInfoButtonClick();
+})();
+
 /******/ })()
 ;
 //# sourceMappingURL=index.bundle.js.map
