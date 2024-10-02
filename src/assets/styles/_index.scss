@@ -23,6 +23,14 @@
   }
 }
 
+.input-weight {
+  .info-container {
+    #weight {
+      width: 48px;
+    }
+  }
+}
+
 .input-activity {
   grid-column: -1/1;
   flex-direction: column;
