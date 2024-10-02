@@ -160,16 +160,22 @@ const sendEmail = () => {
     );
 };
 
-const handleGoalButtonClick = () => {
-  const infoSubmit = document.getElementById("send-btn");
+const handleButtonClick = () => {
+  const buttons = document.querySelectorAll('input[type="button"]');
 
-  infoSubmit.addEventListener("click", () => {
-    sendEmail();
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.value === "Send in an Email") {
+        sendEmail();
+      } else {
+        location.href = "./index.html";
+      }
+    });
   });
 };
 
 loadTargets();
-handleGoalButtonClick();
+handleButtonClick();
 
 console.log(
   retrieveData("info"),

@@ -17,13 +17,19 @@ const updateProfileGoals = () => {
   storeData("goals", profileDATA);
 };
 
-const handleGoalButtonClick = () => {
-  const infoSubmit = document.getElementById("goal-btn");
+const handleButtonClick = () => {
+  const buttons = document.querySelectorAll('input[type="button"]');
 
-  infoSubmit.addEventListener("click", () => {
-    updateProfileGoals();
-    location.href = "./calories.html";
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.value === "Calculate") {
+        updateProfileGoals();
+        location.href = "./calories.html";
+      } else {
+        location.href = "./index.html";
+      }
+    });
   });
 };
 
-handleGoalButtonClick();
+handleButtonClick();

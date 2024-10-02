@@ -9,7 +9,7 @@ const kgConversion = (weight) => {
 };
 // Weight to lb
 const lbConversion = (weight) => {
-  return (weight / 0.45359237).toFixed(0);
+  return (weight / 0.45359237).toFixed(2);
 };
 
 const storeData = (key, data) => {

@@ -1,12 +1,7 @@
 import "../assets/styles/main.scss";
 
 import { profileOBJ } from "./utils/obj";
-import {
-  heightConversion,
-  kgConversion,
-  storeData,
-  retrieveData,
-} from "./utils/utils";
+import { heightConversion, kgConversion, storeData } from "./utils/utils";
 
 const formToOBJ = (form) => Object.fromEntries(new FormData(form));
 
@@ -22,18 +17,22 @@ const updateProfileInfo = () => {
   profileDATA.weight = kgConversion(formDATA.weight);
   profileDATA.activity = formDATA.activity;
 
-  console.log(profileOBJ);
   storeData("info", profileDATA);
 };
 
-const handleInfoButtonClick = () => {
-  const infoSubmit = document.getElementById("info-btn");
+const handleButtonClick = () => {
+  const buttons = document.querySelectorAll('input[type="button"]');
 
-  infoSubmit.addEventListener("click", () => {
-    updateProfileInfo();
-
-    location.href = "./goals.html";
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.value === "Calculate") {
+        updateProfileInfo();
+        location.href = "./goals.html";
+      } else {
+        location.href = "./index.html";
+      }
+    });
   });
 };
 
-handleInfoButtonClick();
+handleButtonClick();

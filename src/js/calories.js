@@ -105,15 +105,20 @@ const generateOptions = (TDEE, weight) => {
   )} Calories <span>${weightArray[4].toFixed(2)} lbs/wk</span>`;
 };
 
-const handleGoalButtonClick = () => {
-  const infoSubmit = document.getElementById("calorie-btn");
+const handleButtonClick = () => {
+  const buttons = document.querySelectorAll('input[type="button"]');
 
-  infoSubmit.addEventListener("click", () => {
-    updateProfileCalories();
-    location.href = "./results.html";
-    console.log(retrieveData("calories"));
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      if (button.value === "Calculate") {
+        updateProfileCalories();
+        location.href = "./results.html";
+      } else {
+        location.href = "./index.html";
+      }
+    });
   });
 };
 
 generateOptions(parseInt(calculateTDEE()), lbConversion(infoOBJ.weight));
-handleGoalButtonClick();
+handleButtonClick();
