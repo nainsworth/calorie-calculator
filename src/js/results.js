@@ -1,6 +1,6 @@
 import "../assets/styles/main.scss";
 import { profileOBJ } from "./utils/obj";
-import { storeData, retrieveData } from "./utils/utils";
+import { lbConversion, retrieveData } from "./utils/utils";
 import emailjs from "@emailjs/browser";
 
 const calorieTarget = document.getElementById("calorie-target");
@@ -132,12 +132,18 @@ const sendEmail = () => {
   const templateParams = {
     email: info.email,
     name: info.name,
-    subject: "Here is your Macros!",
+    subject: "Here's your Macros!",
     calories: `${calorieObj.calories} cals`,
-    protein: `${calorieObj.macro.protein} g`,
-    fat: `${calorieObj.macro.fat} g`,
-    carbs: `${calorieObj.macro.carbs} g`,
-    fiber: `${calorieObj.macro.fiber} g`,
+    protein: `${calorieObj.macro.protein}g`,
+    fat: `${calorieObj.macro.fat}g`,
+    carbs: `${calorieObj.macro.carbs}g`,
+    fiber: `${calorieObj.macro.fiber}g`,
+
+    startWeight: `${lbConversion(retrieveData("info").weight)} lbs`,
+    goalWeight: `${retrieveData("goals").weight} lbs`,
+    activity: "",
+    balance: retrieveData("goals").diet,
+    proteinIntake: retrieveData("goals").protein,
   };
 
   emailjs
