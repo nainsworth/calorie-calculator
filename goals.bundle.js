@@ -125,6 +125,10 @@ ___CSS_LOADER_EXPORT___.push([module.id, `/* Primary Colors */
   width: 24px;
 }
 
+.input-weight .info-container #weight {
+  width: 48px;
+}
+
 .input-activity {
   grid-column: -1/1;
   flex-direction: column;
@@ -323,7 +327,7 @@ body footer .footer-link {
 }
 body footer .footer-link .github-image {
   width: 24px;
-}`, "",{"version":3,"sources":["webpack://./src/assets/styles/_variables.scss","webpack://./src/assets/styles/_index.scss","webpack://./src/assets/styles/main.scss","webpack://./src/assets/styles/_goals.scss","webpack://./src/assets/styles/_calories.scss","webpack://./src/assets/styles/_results.scss"],"names":[],"mappings":"AAEA,mBAAA;AAOA,eAAA;ACTA;EACE,iBAAA;EACA,QAAA;ACKF;ADHE;EACE,WAAA;ACKJ;;ADFA;EACE,iBAAA;EACA,QAAA;ACKF;ADHE;EACE,WAAA;ACKJ;;ADCI;EACE,WAAA;ACEN;;ADGA;EACE,iBAAA;EACA,sBAAA;ACAF;ADEE;EACE,sBAAA;EACA,YAAA;EACA,eAAA;ACAJ;ADEI;EACE,uBAAA;EACA,gBAAA;EACA,qBDjCY;ECkCZ,iBAAA;EACA,sBAAA;EACA,SAAA;EACA,mBAAA;ACAN;ADEM;EACE,WAAA;ACAR;ADGM;EACE,eAAA;ACDR;ADKI;EACE,YAAA;ACHN;;ACjDE;EACE,iBAAA;ADoDJ;;AFpDA,mBAAA;AAOA,eAAA;AINE;EACE,sBAAA;EACA,SAAA;EACA,kBAAA;AFwDJ;AEtDI;EACE,gBJGW;EIFX,iBAAA;AFwDN;AEtDM;EACE,cJVQ;EIWR,qCAAA;EACA,iBAAA;AFwDR;;AGrEE;EACE,gBLSa;AE+DjB;AGrEE;EACE,sBAAA;EACA,kBAAA;EACA,MAAA;AHuEJ;AGrEI;EACE,uBAAA;EACA,YAAA;AHuEN;AGpEI;EACE,YAAA;EACA,SAAA;AHsEN;AGlEE;EACE,sBAAA;EACA,aAAA;AHoEJ;;AAtFA,kBAAA;AACA;;;EAGE,SAAA;EACA,UAAA;EACA,sBAAA;EACA,qBFHa;AE4Ff;;AAtFA,oBAAA;AACA;EACE,YAAA;EACA,WAAA;AAyFF;;AAtFA;EACE,yBFlBiB;EEmBjB,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,iBAAA;EACA,qCFdU;AEuGZ;AAvFE;EACE,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,OAAA;AAyFJ;AAvFI;EACE,sBFhCE;EEiCF,kBAAA;EACA,aAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,SAAA;EACA,YAAA;AAyFN;AAnFM;EACE,aAAA;EACA,4DAAA;EACA,SAAA;AAqFR;AAnFQ;EACE,sBAAA;EACA,aAAA;EACA,8BAAA;EACA,kBAAA;EACA,aAAA;EACA,QAAA;AAqFV;AAlFQ;EACE,YAAA;AAoFV;AAjFQ;;EAEE,aAAA;AAmFV;AAhFQ;EACE,YAAA;EACA,UAAA;EACA,mBAAA;AAkFV;AAhFU;EACE,WAAA;EACA,eAAA;AAkFZ;AA9EQ;EACE,YAAA;EACA,qCFzEE;EE0EF,eAAA;AAgFV;AA7EQ;EACE,qBFzFM;EE0FN,qCF/EE;AE8JZ;AA3EQ;;EAEE,wBAAA;EACA,SAAA;AA6EV;AA1EQ;EACE,YAAA;EACA,mBAAA;EACA,iBAAA;AA4EV;AA1EU;EACE,kBAAA;EAEA,qCFjGA;EEkGA,aAAA;EACA,yBAAA;EACA,gBFtGK;AEiLjB;AAxEU;EACE,yBFnHI;EEoHJ,WFjHJ;EEkHI,OAAA;AA0EZ;AAvEU;EACE,sBFtHJ;EEuHI,cF1HI;EE2HJ,OAAA;AAyEZ;AAtEU;;EAEE,eAAA;EACA,yDAAA;AAwEZ;AAjEE;EACE,YAAA;EACA,WAAA;EACA,gBAAA;AAmEJ;AAjEI;EACE,qBAAA;EACA,cF9IY;EE+IZ,gBFtIM;EEuIN,aAAA;EACA,2BAAA;EACA,uBAAA;EACA,mBAAA;EACA,QAAA;AAmEN;AAjEM;EACE,WAAA;AAmER","sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/assets/styles/_variables.scss","webpack://./src/assets/styles/_index.scss","webpack://./src/assets/styles/main.scss","webpack://./src/assets/styles/_goals.scss","webpack://./src/assets/styles/_calories.scss","webpack://./src/assets/styles/_results.scss"],"names":[],"mappings":"AAEA,mBAAA;AAOA,eAAA;ACTA;EACE,iBAAA;EACA,QAAA;ACKF;ADHE;EACE,WAAA;ACKJ;;ADFA;EACE,iBAAA;EACA,QAAA;ACKF;ADHE;EACE,WAAA;ACKJ;;ADCI;EACE,WAAA;ACEN;;ADKI;EACE,WAAA;ACFN;;ADOA;EACE,iBAAA;EACA,sBAAA;ACJF;ADME;EACE,sBAAA;EACA,YAAA;EACA,eAAA;ACJJ;ADMI;EACE,uBAAA;EACA,gBAAA;EACA,qBDzCY;EC0CZ,iBAAA;EACA,sBAAA;EACA,SAAA;EACA,mBAAA;ACJN;ADMM;EACE,WAAA;ACJR;ADOM;EACE,eAAA;ACLR;ADSI;EACE,YAAA;ACPN;;ACrDE;EACE,iBAAA;ADwDJ;;AFxDA,mBAAA;AAOA,eAAA;AINE;EACE,sBAAA;EACA,SAAA;EACA,kBAAA;AF4DJ;AE1DI;EACE,gBJGW;EIFX,iBAAA;AF4DN;AE1DM;EACE,cJVQ;EIWR,qCAAA;EACA,iBAAA;AF4DR;;AGzEE;EACE,gBLSa;AEmEjB;AGzEE;EACE,sBAAA;EACA,kBAAA;EACA,MAAA;AH2EJ;AGzEI;EACE,uBAAA;EACA,YAAA;AH2EN;AGxEI;EACE,YAAA;EACA,SAAA;AH0EN;AGtEE;EACE,sBAAA;EACA,aAAA;AHwEJ;;AA1FA,kBAAA;AACA;;;EAGE,SAAA;EACA,UAAA;EACA,sBAAA;EACA,qBFHa;AEgGf;;AA1FA,oBAAA;AACA;EACE,YAAA;EACA,WAAA;AA6FF;;AA1FA;EACE,yBFlBiB;EEmBjB,aAAA;EACA,sBAAA;EACA,mBAAA;EACA,iBAAA;EACA,qCFdU;AE2GZ;AA3FE;EACE,aAAA;EACA,sBAAA;EACA,uBAAA;EACA,mBAAA;EACA,OAAA;AA6FJ;AA3FI;EACE,sBFhCE;EEiCF,kBAAA;EACA,aAAA;EACA,kBAAA;EACA,aAAA;EACA,sBAAA;EACA,SAAA;EACA,YAAA;AA6FN;AAvFM;EACE,aAAA;EACA,4DAAA;EACA,SAAA;AAyFR;AAvFQ;EACE,sBAAA;EACA,aAAA;EACA,8BAAA;EACA,kBAAA;EACA,aAAA;EACA,QAAA;AAyFV;AAtFQ;EACE,YAAA;AAwFV;AArFQ;;EAEE,aAAA;AAuFV;AApFQ;EACE,YAAA;EACA,UAAA;EACA,mBAAA;AAsFV;AApFU;EACE,WAAA;EACA,eAAA;AAsFZ;AAlFQ;EACE,YAAA;EACA,qCFzEE;EE0EF,eAAA;AAoFV;AAjFQ;EACE,qBFzFM;EE0FN,qCF/EE;AEkKZ;AA/EQ;;EAEE,wBAAA;EACA,SAAA;AAiFV;AA9EQ;EACE,YAAA;EACA,mBAAA;EACA,iBAAA;AAgFV;AA9EU;EACE,kBAAA;EAEA,qCFjGA;EEkGA,aAAA;EACA,yBAAA;EACA,gBFtGK;AEqLjB;AA5EU;EACE,yBFnHI;EEoHJ,WFjHJ;EEkHI,OAAA;AA8EZ;AA3EU;EACE,sBFtHJ;EEuHI,cF1HI;EE2HJ,OAAA;AA6EZ;AA1EU;;EAEE,eAAA;EACA,yDAAA;AA4EZ;AArEE;EACE,YAAA;EACA,WAAA;EACA,gBAAA;AAuEJ;AArEI;EACE,qBAAA;EACA,cF9IY;EE+IZ,gBFtIM;EEuIN,aAAA;EACA,2BAAA;EACA,uBAAA;EACA,mBAAA;EACA,QAAA;AAuEN;AArEM;EACE,WAAA;AAuER","sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -866,14 +870,20 @@ var updateProfileGoals = function updateProfileGoals() {
   profileDATA.protein = formDATA.protein;
   (0,_utils_utils__WEBPACK_IMPORTED_MODULE_2__.storeData)("goals", profileDATA);
 };
-var handleGoalButtonClick = function handleGoalButtonClick() {
-  var infoSubmit = document.getElementById("goal-btn");
-  infoSubmit.addEventListener("click", function () {
-    updateProfileGoals();
-    location.href = "./calories.html";
+var handleButtonClick = function handleButtonClick() {
+  var buttons = document.querySelectorAll('input[type="button"]');
+  buttons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      if (button.value === "Calculate") {
+        updateProfileGoals();
+        location.href = "./calories.html";
+      } else {
+        location.href = "./index.html";
+      }
+    });
   });
 };
-handleGoalButtonClick();
+handleButtonClick();
 })();
 
 /******/ })()
