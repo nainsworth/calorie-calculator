@@ -42,7 +42,7 @@
                 name="age"
                 id="age"
                 placeholder="0"
-                pattern="[0-9]*"
+                pattern="[0-9.]*"
                 inputmode="numeric"
               />
               <p>yrs</p>
@@ -54,10 +54,24 @@
             <label for="height">Height:</label>
             <div class="info-container">
               <label for="feet" hidden></label>
-              <input type="number" name="feet" id="feet" placeholder="0" />
+              <input
+                type="number"
+                name="feet"
+                id="feet"
+                placeholder="0"
+                pattern="[0-9.]*"
+                inputmode="numeric"
+              />
               <p class="input-span">ft</p>
               <label for="inches" hidden></label>
-              <input type="number" name="inches" id="inches" placeholder="0" />
+              <input
+                type="number"
+                name="inches"
+                id="inches"
+                placeholder="0"
+                pattern="[0-9.]*"
+                inputmode="numeric"
+              />
               <p class="input-span">in</p>
             </div>
           </div>
@@ -65,8 +79,14 @@
           <div class="input-weight">
             <label for="weight">Weight:</label>
             <div class="info-container">
-              <input type="number" name="weight" id="weight" placeholder="0"  pattern="\d*"
-                inputmode="numeric" />
+              <input
+                type="number"
+                name="weight"
+                id="weight"
+                placeholder="0"
+                pattern="[0-9.]*"
+                inputmode="numeric"
+              />
               <p class="input-span">lbs</p>
             </div>
           </div>
