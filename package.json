@@ -2,10 +2,10 @@
   "name": "calorie-calculator",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "webpack.common.js",
   "scripts": {
-    "build": "webpack",
-    "dev": "webpack serve",
+    "dev": "webpack serve --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
     "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "repository": {
@@ -29,6 +29,7 @@
     "style-loader": "^4.0.0",
     "webpack": "^5.93.0",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.0.4"
+    "webpack-dev-server": "^5.0.4",
+    "webpack-merge": "^6.0.1"
   }
 }

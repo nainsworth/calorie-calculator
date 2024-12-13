@@ -1,41 +1,15 @@
-// npm init -y
-// npm i -D webpack webpack-cli
-// npm i -D sass style-loader css-loader sass-loader
-// npm i -D html-webpack-plugin
-// npm i -D babel-loader @babel/core @babel/preset-env
-// npm i -D html-loader
-
-// combined
-// npm i -D webpack webpack-cli sass style-loader css-loader sass-loader html-webpack-plugin babel-loader @babel/core @babel/preset-env html-loader
-
-// optional
-// npm i axios
-
-// for email
-// npm i -D @emailjs/browser
-
-// For posting live to git hub
-// Step 1
-// Remove the dist directory from the project’s .gitignore file.
-
-// Step 2
-// git add dist && git commit -m "Initial dist subtree commit"
-
-// Step 3
-// git subtree push --prefix dist origin gh-pages
+// Installs
+// npm i -D webpack webpack-cli sass style-loader css-loader sass-loader html-webpack-plugin babel-loader @babel/core @babel/preset-env html-loader webpack-merge
 
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-// npm i -D webpack-bundle-analyzer
-// const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 module.exports = {
-  mode: "development",
   entry: {
-    index: "./src/js/index.js",
-    goals: "./src/js/goals.js",
-    calories: "./src/js/calories.js",
-    results: "./src/js/results.js",
+    index: path.resolve(__dirname, "src/js/index.js"),
+    goals: path.resolve(__dirname, "src/js/goals.js"),
+    calories: path.resolve(__dirname, "src/js/calories.js"),
+    results: path.resolve(__dirname, "src/js/results.js"),
   },
   output: {
     path: path.resolve(__dirname, "dist/"),
@@ -43,22 +17,20 @@ module.exports = {
     clean: true,
     assetModuleFilename: "[name][ext]",
   },
-  devtool: "source-map",
-  devServer: {
-    static: {
-      directory: path.resolve(__dirname, "dist/"),
-    },
-    port: 3000,
-    open: true,
-    hot: true,
-    compress: true,
-    historyApiFallback: true,
-  },
   module: {
     rules: [
       {
         test: /\.scss$/i,
-        use: ["style-loader", "css-loader", "sass-loader"],
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              api: "modern-compiler",
+            },
+          },
+        ],
       },
       {
         test: /\.js$/,
@@ -101,6 +73,5 @@ module.exports = {
       template: "src/views/results.html",
       chunks: ["results"],
     }),
-    // new BundleAnalyzerPlugin(),
   ],
 };

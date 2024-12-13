@@ -2,7 +2,7 @@ import "../assets/styles/main.scss";
 
 import { profileOBJ } from "./utils/obj";
 import { storeData, retrieveData, lbConversion } from "./utils/utils";
-import { mifflinEquation } from "./utils/equations";
+import { bmrEquation } from "./utils/utils";
 
 const infoOBJ = retrieveData("info");
 
@@ -21,7 +21,7 @@ const updateProfileCalories = () => {
 };
 
 const calculateTDEE = () => {
-  const bmr = mifflinEquation(
+  const bmr = bmrEquation(
     infoOBJ.gender,
     infoOBJ.weight,
     infoOBJ.height,
