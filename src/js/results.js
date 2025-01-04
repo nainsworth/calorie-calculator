@@ -97,13 +97,15 @@ const updateMacroInfo = (e) => {
 
 // Update Protein Target
 const updateTargets = () => {
-  calorieObj.macro.protein = Math.trunc(
+  // console.log((calorieObj.calories * (calorieObj.ratio.protein * 0.01)) / 4);
+
+  calorieObj.macro.protein = Math.round(
     (calorieObj.calories * (calorieObj.ratio.protein * 0.01)) / 4
   );
-  calorieObj.macro.fat = Math.trunc(
+  calorieObj.macro.fat = Math.round(
     (calorieObj.calories * (calorieObj.ratio.fat * 0.01)) / 9
   );
-  calorieObj.macro.carbs = Math.trunc(
+  calorieObj.macro.carbs = Math.round(
     (calorieObj.calories * (calorieObj.ratio.carbs * 0.01)) / 4
   );
 };
@@ -125,7 +127,7 @@ const loadTargets = () => {
   fatSlider.value = calorieObj.ratio.fat;
   carbSlider.value = calorieObj.ratio.carbs;
 
-  console.log(calorieObj);
+  // console.log(calorieObj);
 };
 
 const sendEmail = () => {
@@ -177,8 +179,8 @@ const handleButtonClick = () => {
 loadTargets();
 handleButtonClick();
 
-console.log(
-  retrieveData("info"),
-  retrieveData("goals"),
-  retrieveData("calories")
-);
+// console.log(
+//   retrieveData("info"),
+//   retrieveData("goals"),
+//   retrieveData("calories")
+// );
